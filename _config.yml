@@ -23,7 +23,7 @@ subtitle                 : 모의해킹 공부 등등.. # site tagline that appe
 name                     : "CHO NAM GI"
 description              : "남키의 개인 블로그입니다. 모의해킹, IT, 그리고 일상에 대한 글을 작성합니다."
 url                      : "https://naaamgi.github.io"
-baseurl                  : "/naaamgi.github.io" # the subpath of your site, e.g. "/blog"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "naaamgi/naaamgi.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : /assets/images/self.jpeg # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
