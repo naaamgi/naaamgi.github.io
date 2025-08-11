@@ -14,3 +14,18 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+sidebar-category:
+  - title: "Category"
+    children:
+      - title: "카테고리"
+        url: "/categories/"
+      - title: "태그"
+        url:  "/tags/"
+
+  - title: "모의해킹"
+    children:
+      - title: "BHPT"
+        url: "/bhpt/"
+      - title: "HackTheBox"
+        url:  "/hackthebox/"
