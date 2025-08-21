@@ -26,6 +26,8 @@ sidebar-category:
   - title: "모의해킹"
     children:
       - title: "BHPT"
-        url: "/bhpt/"
+        url: "/bhpt"
+        category: "bhpt"
       - title: "HackTheBox"
-        url:  "/hackthebox/"
+        url:  "/hackthebox"
+        categories: "hackthebox"

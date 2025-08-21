@@ -2,8 +2,8 @@
 title: "HackTheBox"
 layout: archive
 permalink: /hackthebox
-author_profile: true
 sidebar_main: true
+author_profile: true
 ---
 
 

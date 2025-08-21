@@ -2,8 +2,8 @@
 title: "BHPT"
 layout: archive
 permalink: /bhpt
-author_profile: true
 sidebar_main: true
+author_profile: true
 ---
 
 
