@@ -134,9 +134,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/naaamgi"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   # url: "https://instagram.com/"
 
 # Site Footer
 footer:
@@ -144,9 +144,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/naaamgi"
-    #- label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   url:
   since: "2025"
 
 
@@ -312,7 +312,7 @@ defaults:
       author_profile: true
       read_time: ture
       comments: false
-      share: true
+      share: false
       related: true
       show_date: true
       sidebar_main: true
