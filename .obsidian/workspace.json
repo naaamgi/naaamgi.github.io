@@ -1,0 +1,185 @@
+{
+  "main": {
+    "id": "d359fd43728fecb5",
+    "type": "split",
+    "children": [
+      {
+        "id": "f97879af6d149b7e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7a25c6d301da4842",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/BHPT/2025-08-23-테스트보고서.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2025-08-23-테스트보고서"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "180862ebff465469",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea1f20a0f44cb045",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2bae1d0e718177f4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "feb6c848b9968ef6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "a17de6feef9349f1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "북마크"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cca102e1b68bcc31",
+    "type": "split",
+    "children": [
+      {
+        "id": "214c642ff91c26e6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "24469ba100bde887",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/BHPT/2025-08-23-테스트보고서.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "2025-08-23-테스트보고서 의 백링크"
+            }
+          },
+          {
+            "id": "8e4a3209dd78f771",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/BHPT/2025-08-23-테스트보고서.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "2025-08-23-테스트보고서 의 나가는 링크"
+            }
+          },
+          {
+            "id": "fc29c5237dd035f8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "태그"
+            }
+          },
+          {
+            "id": "6c1358dd9908dde9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/BHPT/2025-08-23-테스트보고서.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "2025-08-23-테스트보고서 의 개요"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false
+    }
+  },
+  "active": "7a25c6d301da4842",
+  "lastOpenFiles": [
+    "_site/bhpt/테스트보고서/index.html",
+    "_site/bhpt/테스트보고서",
+    "_posts/BHPT/2025-08-22-보고서.md",
+    "_posts/BHPT/2025-08-23-테스트보고서.md",
+    "2020-05-25.md",
+    "_site/2020-05-25.md",
+    "_site/bhpt/보고서/index.html",
+    "_site/bhpt/보고서",
+    "_site/보고서/index.html",
+    "_site/보고서"
+  ]
+}
