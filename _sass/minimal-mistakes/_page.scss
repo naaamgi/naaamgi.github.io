@@ -84,6 +84,7 @@ body {
 }
 
 .page__content {
+  font-size: 0.9em;
   h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
@@ -170,6 +171,14 @@ body {
     margin-top: -1.5em;
     padding-inline-start: 1.25rem;
   }
+}
+
+/* 목차(TOC)만 원래 사이즈로 덮어쓰기 */
+.page__content .toc,
+.page__content .toc__menu,
+.page__content .toc__menu li,
+.page__content .toc__menu a {
+  font-size: 0.98em !important;
 }
 
 .page__hero {
