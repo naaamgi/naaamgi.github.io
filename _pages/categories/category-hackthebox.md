@@ -1,7 +1,7 @@
 ---
 title: "HackTheBox"
 layout: archive
-permalink: /hackthebox
+permalink: categories/hackthebox
 sidebar_main: true
 author_profile: true
 ---

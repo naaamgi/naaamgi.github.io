@@ -27,7 +27,7 @@ baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "naaamgi/naaamgi.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : /assets/images/self.jpeg # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+masthead_title           :  # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 enable_copy_code_button  : true # true, false (default)
@@ -117,7 +117,7 @@ author:
   avatar           : /assets/images/self.jpeg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "개인 공부 블로그입니다."
   location         : "대한민국"
-  email            : "qkekwhskarl@naver.com"
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -144,10 +144,10 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/naaamgi"
-    - label: "Instagram"
+    #- label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
-  since: "2013"
+  since: "2025"
 
 
 # Reading Files
@@ -281,16 +281,16 @@ tag_archive:
   type: liquid
   path: /tags/
 # https://github.com/jekyll/jekyll-archives
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
-  permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
 
 
 # HTML Compression
@@ -305,19 +305,17 @@ compress_html:
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: "_posts"
       type: posts
     values:
       layout: single
       author_profile: true
-      read_time: false
-      comments: # true
+      read_time: ture
+      comments: false
       share: true
       related: true
       show_date: true
-      sidebar: 
-        nav: "archive"
-
-
-date_format: "%Y-%m-%d"
-sidebar_main: true
+      sidebar_main: true
+      toc: true
+      toc_sticky: true
+      toc_label: 목차 
