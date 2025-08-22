@@ -1,6 +1,7 @@
 {
   "tabSize": 2,
   "useMarkdownLinks": true,
-  "attachmentFolderPath": "images",
-  "showUnsupportedFiles": true
+  "attachmentFolderPath": "images/${filename}",
+  "showUnsupportedFiles": true,
+  "newLinkFormat": "shortest"
 }
