@@ -1,9 +1,7 @@
 - name: oscp
   display_name: "OSCP"
   url: "/categories/oscp"
-- name: pg
-  display_name: "Proving Grounds"
-  url: "/categories/pg"
+
 - name: bhpt
   display_name: "BHPT"
   url: "/categories/bhpt"
@@ -16,3 +14,7 @@
 - name: knight
   display_name: "기사"
   url: "/categories/knight"
+
+- name: pg_practice
+  display_name: "Proving Grounds - Practice"
+  url: "/categories/pg_practice"

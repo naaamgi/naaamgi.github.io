@@ -1,11 +1,11 @@
 ---
-title: "Proving Ground"
+title: "Proving Ground - Practice"
 layout: archive
-permalink: categories/pg
+permalink: categories/pg_practice
 author_profile: true
 sidebar_main: true
 ---
 
 
-{% assign posts = site.categories.pg %}
+{% assign posts = site.categories.pg_practice %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
