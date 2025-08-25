@@ -4,37 +4,116 @@
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
   <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
   <ul class="nav__items" id="category_tag_menu">
-      <!--전체 글 수-->
-      <li>
-        📂 전체 글 수 {{ sum }} 개
-      </li>
+    <!-- 전체 글 수 -->
+    <li>📂 전체 글 수 {{ sum }}개</li>
 
-      <!-- 보안 공부 -->
-      <li>
-        <span class="nav__sub-title">보안 개념 공부</span>
-        <ul>
-          {% for category in site.data.categories %}
-            {% if category.name == "penetration" or category.name == "knight" %}
-              <li>
-                <a href="{{ category.url }}" class="">{{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})</a>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </li>
+    <!-- 보안 개념 공부 -->
+    <li>
+      <span class="nav__sub-title">보안 개념 공부</span>
+      <ul>
+        {% comment %} penetration 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "penetration" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
 
-      <!-- 기타 등등.. -->
-      <li>
-        <span class="nav__sub-title">보안 실습 공부</span>
-        <ul>
-          {% for category in site.data.categories %}
-            {% if category.name == "oscp" or category.name == "pg_prcatice" or category.name == "bhpt" %}
-              <li>
-                <a href="{{ category.url }}" class="">{{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})</a>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </li>
+        {% comment %} knight 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "knight" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+    <!-- 보안 실습 공부 -->
+    <li>
+      <span class="nav__sub-title">보안 실습 공부</span>
+      <ul>
+        {% comment %} oscp 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "oscp" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} pg_practice 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "pg_practice" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} pg_work 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "pg_work" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+        
+        {% comment %} bhpt 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "bhpt" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+    <!-- 기타 등등 필요한 카테고리 그룹도 위와 같은 패턴으로 추가 -->
+
+    <!-- 보안 개념 공부 -->
+    <li>
+      <span class="nav__sub-title">유용한 툴 & 정보</span>
+      <ul>
+        {% comment %} Tools {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "tools" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} information {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "information" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
   </ul>
 </nav>

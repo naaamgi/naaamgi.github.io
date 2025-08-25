@@ -13,6 +13,18 @@
 - name: knight
   display_name: "기사"
   url: "/categories/knight"
+
 - name: pg_practice
   display_name: "Proving Grounds - Practice"
   url: "/categories/pg_practice"
+
+- name: pg_work
+  display_name: "Proving Grounds - Work"
+  url: "/categories/pg_work"
+
+- name: tools
+  display_name: "Tools"
+  url: "/categories/tools"
+- name: information
+  display_name: "Information"
+  url: "/categories/information"
