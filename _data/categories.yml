@@ -28,3 +28,6 @@
 - name: information
   display_name: "Information"
   url: "/categories/information"
+- name: cve
+  display_name: "CVE"
+  url: "/categories/cve"

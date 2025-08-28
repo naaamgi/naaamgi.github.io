@@ -112,6 +112,17 @@
             </li>
           {% endif %}
         {% endfor %}
+
+        {% comment %} cve {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "cve" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
       </ul>
     </li>
 
