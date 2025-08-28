@@ -1,5 +1,5 @@
 ---
-title:  "RustScan 사용방법 및 Namp과의 차이점 "
+title:  "Enumeration Tool: RustScan, Namp 차이점과 활용법 "
 excerpt: "Rustscan과 Nmap의 차이점과, RustScan의 사용방법을 공부해보자. "
 
 categories: tools
