@@ -1,5 +1,5 @@
 ---
-title: "Proving Ground - Practice"
+title: "Proving Grounds - Practice"
 layout: archive
 permalink: categories/pg_practice
 author_profile: true
