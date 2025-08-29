@@ -1,6 +1,6 @@
 ---
 
-title: "Proving grounds Practice: Exfilterd 문제풀이"
+title: "Proving grounds Practice: Exfilterated 문제풀이"
 
 excerpt: "Offsec proving grounds practice linux machine writeup"
 
