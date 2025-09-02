@@ -32,6 +32,17 @@
             </li>
           {% endif %}
         {% endfor %}
+
+        {% comment %} pnt 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "pnt" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
       </ul>
     </li>
 
@@ -72,16 +83,7 @@
           {% endif %}
         {% endfor %}
         
-        {% comment %} bhpt 카테고리 {% endcomment %}
-        {% for category in site.data.categories %}
-          {% if category.name == "bhpt" %}
-            <li>
-              <a href="{{ category.url }}">
-                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
+
       </ul>
     </li>
 

@@ -1,9 +1,9 @@
 - name: oscp
   display_name: "OSCP"
   url: "/categories/oscp"
-- name: bhpt
-  display_name: "BHPT"
-  url: "/categories/bhpt"
+- name: pnt
+  display_name: "Pivoting & Tunneling"
+  url: "/categories/pnt"
 - name: hackthebox
   display_name: "Hack The Box"
   url: "/categories/hackthebox"

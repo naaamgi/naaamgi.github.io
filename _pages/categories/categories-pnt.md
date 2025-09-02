@@ -1,10 +1,11 @@
 ---
-title: "BHPT"
+title: "Pivoting & Tunneling"
 layout: archive
-permalink: categories/bhpt
-sidebar_main: true
+permalink: categories/pnt
 author_profile: true
+sidebar_main: true
 ---
 
-{% assign posts = site.categories.bhpt %}
+
+{% assign posts = site.categories.pnt %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
