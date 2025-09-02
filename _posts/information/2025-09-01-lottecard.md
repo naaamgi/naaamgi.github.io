@@ -23,6 +23,7 @@ last_modified_at: 2025-09-02
 롯데카드는 이번 사고가 랜섬웨어와 같은 직접적 서비스 마비 공격은 아니지만, 온라인 결제 핵심 시스템을 노린 침해였다는 점에서 사안의 심각성이 크다고 보고 있다.
 
 **ISMS-P 획득 이후 발생한 보안 침해 사고**
+
 롯데카드는 지난 8월 12일 정보보호 및 개인정보보호 관리체계(ISMS-P) 인증을 획득하며 보안 강화 노력을 이어온 기업이다. 그러나 불과 2주 만에 온라인 결제 시스템에서 취약점이 악용된 사건이 발생하면서 업계 전반의 보안 체계가 여전히 근본적인 위협에 직면해 있음을 보여준다.
 
 출처 : 데일리시큐(https://www.dailysecu.com)
@@ -38,10 +39,10 @@ CVE-2017-10271은 Oracle WebLogic Server의 원격 코드 실행(RCE) 취약점�
 - 이후 PowerShell 스크립트 등을 이용해 공격용 바이너리를 다운로드 및 실행하거나 웹쉘을 업로드
 - 공개된 익스플로잇 코드와 Metasploit 모듈이 존재하여 실습 환경에서 원격 코드 실행을 연습 가능
 
-### exploit
-[Exploit-DB] https://www.exploit-db.com/exploits/43458
 
 #### exploit 준비 사항 및 사용 방법
+활용 exploit - [Exploit-DB](https://www.exploit-db.com/exploits/43458)
+
 - 취약한 Oracle WebLogic 서버 주소(URL)
 - 공격자의 리버스 셸을 받을 IP(lhost) 및 포트(lport) (리스닝 환경 구성 필요)
 - Python 3 환경 (requests 라이브러리 필요)
