@@ -11,7 +11,7 @@ typora-root-url: ../../
 date: 2025-09-02
 last_modified_at: 2025-09-02
 ---
-## 사건 개요
+# 사건 개요
 <img src="../../../images/2025-09-01-lottecard/image.png" alt="img" style="zoom:50%;" />
 
 롯데카드 온라인 결제 시스템 해킹 시도 포착…웹쉘 업로드 통한 내부자료 1.7GB 유출 정황
@@ -28,19 +28,19 @@ last_modified_at: 2025-09-02
 
 출처 : 데일리시큐(https://www.dailysecu.com)
 
-## CVE-2017-10271
-### 취약점 개요
+# CVE-2017-10271
+## 취약점 개요
 CVE-2017-10271은 Oracle WebLogic Server의 원격 코드 실행(RCE) 취약점으로, 공격자가 특수 제작된 XML 데이터를 전송하여 원격에서 임의의 코드를 실행할 수 있는 심각한 보안 문제이다.
 
 해당 취약점은 WebLogic의 wls-wsat 컴포넌트에 존재하는 역직렬화 취약점으로써, 적절한 인증 없이 원격에서 공격이 가능하다. 공격자는 이를 이용해 웹쉘 업로드, 악성코드 설치, 원격 제어 등 다양한 공격을 수행할 수 있다.
 
-### CVE-2017-10271 exploit 방법
+## CVE-2017-10271 exploit 방법
 - 공격자는 취약한 WebLogic 서버에 악성 XML 페이로드를 보내 원격 코드 실행 권한 획득
 - 이후 PowerShell 스크립트 등을 이용해 공격용 바이너리를 다운로드 및 실행하거나 웹쉘을 업로드
 - 공개된 익스플로잇 코드와 Metasploit 모듈이 존재하여 실습 환경에서 원격 코드 실행을 연습 가능
 
 
-#### exploit 준비 사항 및 사용 방법
+### exploit 준비 사항 및 사용 방법
 활용 exploit - [Exploit-DB](https://www.exploit-db.com/exploits/43458)
 
 - 취약한 Oracle WebLogic 서버 주소(URL)
