@@ -31,3 +31,7 @@
 - name: cve
   display_name: "CVE"
   url: "/categories/cve"
+
+- name: kt
+  display_name: "kt cloud TECH UP"
+  url: "/categories/kt"
