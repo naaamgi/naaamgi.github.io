@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "f97879af6d149b7e",
+        "id": "e8bebf8bd430ee82",
         "type": "tabs",
         "children": [
           {
-            "id": "7a25c6d301da4842",
+            "id": "a60da4cb8f05470b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_posts/BHPT/2025-08-23-테스트보고서.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2025-08-23-테스트보고서"
+              "title": "새 탭"
             }
           }
         ]
@@ -171,7 +167,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7a25c6d301da4842",
+  "active": "a60da4cb8f05470b",
   "lastOpenFiles": [
     "무제.canvas",
     "_site/무제.canvas",
