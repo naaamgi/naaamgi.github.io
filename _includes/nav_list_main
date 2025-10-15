@@ -22,7 +22,7 @@
           {% endif %}
         {% endfor %}
 
-        {% comment %} kt cloud TECH UP 카테고리 {% endcomment %}
+        <!-- {% comment %} kt cloud TECH UP 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
           {% if category.name == "kt" %}
             <li>
@@ -31,7 +31,7 @@
               </a>
             </li>
           {% endif %}
-        {% endfor %}
+        {% endfor %} -->
 
         {% comment %} pnt 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
