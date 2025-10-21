@@ -32,6 +32,6 @@
   display_name: "CVE"
   url: "/categories/cve"
 
-- name: kt
-  display_name: "kt cloud TECH UP"
-  url: "/categories/kt"
+- name: sk
+  display_name: "SK 쉴더스 루키즈"
+  url: "/categories/sk"

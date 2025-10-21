@@ -22,16 +22,16 @@
           {% endif %}
         {% endfor %}
 
-        <!-- {% comment %} kt cloud TECH UP 카테고리 {% endcomment %}
+        {% comment %} SK 쉴더스 루키즈 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
-          {% if category.name == "kt" %}
+          {% if category.name == "sk" %}
             <li>
               <a href="{{ category.url }}">
                 {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
               </a>
             </li>
           {% endif %}
-        {% endfor %} -->
+        {% endfor %}
 
         {% comment %} pnt 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
