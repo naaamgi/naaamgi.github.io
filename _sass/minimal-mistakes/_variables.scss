@@ -8,8 +8,9 @@
 
 $doc-font-size: 14px !default;
 $doc-font-size-medium: $doc-font-size * 1.125 !default; // 그대로 유지 (약 15.75px)
-$doc-font-size-large: $doc-font-size * 1.20 !default;   // 1.25 -> 1.15로 비율 낮춤 (약 16.1px)
-$doc-font-size-x-large: $doc-font-size * 1.30 !default;  // 1.375 -> 1.25로 비율 낮춤 (약 17.5px)
+// PC 환경 폰트 크기를 맥북에서 편안한 크기 (16px, 17px)로 재조정
+$doc-font-size-large: 16px !default; 
+$doc-font-size-x-large: 17px !default;
 
 /* paragraph indention */
 $paragraph-indent: false !default; // true, false (default)
