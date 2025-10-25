@@ -5,12 +5,17 @@ main:
   # #- title: "About"
   #   #url: /about/
   
+  # 기술노트 링크를 Category 앞에 추가
+
   - title: "Category"
     url: /categories/
   - title: "Tag"
     url: /tags/
   - title: "Post by Year"
     url: /year-archive/
+  - title: "기술노트"
+    url: https://naaamgi.github.io/my-docusaurus-page/ # <-- 여기에 Docusaurus 사이트 주소를 넣으세요!
+    target: _blank  # <-- 이 속성을 추가하면 새 탭에서 열립니다 (권장)
  
 
 # 카테고리 추가시 
