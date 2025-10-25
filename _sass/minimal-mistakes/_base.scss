@@ -21,7 +21,7 @@ body {
   padding: 0;
   color: $text-color;
   font-family: $global-font-family;
-  line-height: 1.5;
+  line-height: 1.625; /* 26px / 16px = 1.625에 가까운 값으로 설정 */
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */

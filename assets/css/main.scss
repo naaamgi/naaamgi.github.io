@@ -3,7 +3,37 @@
 search: false
 ---
 
+/* Inter (English) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Spoqa Han Sans Neo (Korean) */
+@import url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/css/spoqa-han-sans-neo.css'); 
+// 스포카 CDN을 이용해 로드
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+
 @charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+
+
+
+@font-face {
+    font-family: 'Hack Nerd Font Mono'; /* font-family 이름은 원하는대로 지정 (띄어쓰기 주의) */
+    src: url('../fonts/HackNerdFontMono-Regular.ttf') format('truetype');
+    font-weight: 400; // Regular
+    font-style: normal;
+}
+
+
+// * 만약 Bold 폰트 파일도 있으시다면, Bold용도 추가해 주세요:
+// * (예시: HackNerdFontMono-Bold.ttf 파일이 있다면)
+@font-face {
+    font-family: 'Hack Nerd Font Mono';
+    src: url('../fonts/HackNerdFontMono-Bold.ttf') format('truetype');
+    font-weight: 700; // Bold
+    font-style: normal;
+}

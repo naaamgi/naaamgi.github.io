@@ -7,9 +7,9 @@
    ========================================================================== */
 
 $doc-font-size: 14px !default;
-$doc-font-size-medium: $doc-font-size * 1.125 !default;
-$doc-font-size-large: $doc-font-size * 1.25 !default;
-$doc-font-size-x-large: $doc-font-size * 1.375 !default;
+$doc-font-size-medium: $doc-font-size * 1.125 !default; // 그대로 유지 (약 15.75px)
+$doc-font-size-large: $doc-font-size * 1.20 !default;   // 1.25 -> 1.15로 비율 낮춤 (약 16.1px)
+$doc-font-size-x-large: $doc-font-size * 1.30 !default;  // 1.375 -> 1.25로 비율 낮춤 (약 17.5px)
 
 /* paragraph indention */
 $paragraph-indent: false !default; // true, false (default)
@@ -52,9 +52,18 @@ $monospace-code: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consol
 $handwritten: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
 
 /* Defaults used in Minimal mistakes */
-$default-sans-serif: -apple-system, BlinkMacSystemFont, "Nanum Gothic", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+
+
+// Inter와 Spoqa Han Sans Neo를 가장 앞에 배치
+//$default-sans-serif: -apple-system, BlinkMacSystemFont, "Nanum Gothic", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$default-sans-serif: "Inter", "Inter Fallback", system-ui, arial;
+// 영어(Inter) -> 한글(Spoqa Han Sans Neo) 순서
+
 $default-serif: Georgia, Times, serif;
-$default-monospace: Monaco, Consolas, "Lucida Console", monospace;
+
+// 변경 전: $default-monospace: Monaco, Consolas, "Lucida Console", monospace;
+// 변경 후:
+$default-monospace: "Hack Nerd Font Mono", Monaco, Consolas, "Lucida Console", monospace;
 
 /* Emoji native from modern font stack - add to the end of the font-face for native emojis */
 $emoji-native: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -186,7 +195,7 @@ $small: 600px !default;
 $medium: 768px !default;
 $medium-wide: 900px !default;
 $large: 1024px !default;
-$x-large: 1400px !default;
+$x-large: 1350px !default;
 $max-width: $x-large !default;
 
 /*
