@@ -1,0 +1,10 @@
+/* assets/css/custom.css */
+
+/* 왼쪽 카테고리 사이드바에 오른쪽 경계선 추가 */
+.sidebar {
+    /* 가장 연한 사막색(#e9e5d4), 1px 실선 */
+    border-right: 1px solid #e9e5d4; 
+    
+    /* 경계선과 사이드바 내용 사이에 여백 추가 */
+    padding-right: 1.5em; 
+}
