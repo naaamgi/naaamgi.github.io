@@ -58,10 +58,7 @@ $handwritten: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursi
 // Inter와 Spoqa Han Sans Neo를 가장 앞에 배치
 //$default-sans-serif: -apple-system, BlinkMacSystemFont, "Nanum Gothic", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 $default-sans-serif: "Inter", "Inter Fallback", system-ui, arial;
-// 영어(Inter) -> 한글(Spoqa Han Sans Neo) 순서
-
 $default-serif: Georgia, Times, serif;
-
 // 변경 전: $default-monospace: Monaco, Consolas, "Lucida Console", monospace;
 // 변경 후:
 $default-monospace: "Hack Nerd Font Mono", Monaco, Consolas, "Lucida Console", monospace;
