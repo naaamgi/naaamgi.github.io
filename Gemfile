@@ -25,7 +25,8 @@
 source "https://rubygems.org"
 
 # GitHub Pages 환경을 지정하고, 모든 공식 플러그인을 자동 포함합니다.
-gem "github-pages" 
+gem "github-pages"
+
 # 'group: :jekyll_plugins'는 공식 플러그인에 대해 불필요하며, 오히려 충돌을 일으킬 수 있습니다.
 
 # 아래는 Minimal Mistakes에서 사용하지만, 공식 플러그인 목록에 없는 Gem만 남겨둡니다.

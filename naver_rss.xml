@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>남키노트</title>
+  <link>https://naaamgi.github.io/</link>
+  <description>남키의 개인 블로그입니다. 모의해킹, IT, 그리고 일상에 대한 글을 작성합니다.</description>
+  <language>ko</language>
+  <generator>Jekyll</generator>
+  <lastBuildDate>Fri, 31 Oct 2025 02:01:58 +0900</lastBuildDate>
+  <managingEditor>CHO NAM GI</managingEditor>
+
+  <item>
+    <title>Rookies 5일차: Python 개념 학습 4</title>
+    <link>https://naaamgi.github.io/sk/5/</link>
+    <description><![CDATA[
+      <p class="notice--danger"><strong>☀️<u>공지 사항</u>☀️</strong> 해당 게시글은 <code class="language-plaintext highlighter-rouge">SK 쉴더스 루키즈, 생성형AI 활용 사이버보안 전문인력 양성과정</code> 을 수업을 듣고 정리한 글입니다. 자세한 교육 정보는  <a href="https://sslc.kr/">SK 쉴더스 홈페이지</a> 를 확인해주세요.</p>
+
+<h1 id="학습-내용-요약-251030">학습 내용 요약 (25/10/30)</h1>
+
+<h2 id="1-파이썬-함수의-기본-및-심화-활용">1. 파이썬 함수의 기본 및 심화 활용</h2>
+
+<h3 id="11-함수의-정의-및-장점">1.1. 함수의 정의 및 장점</h3>
+
+<p>파이썬의 <strong>함수(Function)</strong>는 객체 지향 프로그래밍(OOP)에서 <strong>메서드(Method)</strong>라고도 불리는 것으로, 일련의 실행 코드를 묶어 재사용 가능하게 만든 단위이다. 함수를 사용하면 다음과 같은 장점을 얻을 수 있다:</p>
+
+<ul>
+  <li><strong>코드 재사용</strong>이 가능하여 개발 효율성을 높인다.</li>
+  <li><strong>가독성</strong>이 향상되어 코드 이해가 쉬워진다.</li>
+  <li><strong>유지보수</strong> 및 <strong>디버깅</strong>이 용이해진다.</li>
+  <li>코드를 논리적으로 나누어 <strong>모듈화</strong>할 수 있다 (예: <code class="language-plaintext highlighter-rouge">import utils</code>).</li>
+</ul>
+    ]]></description>
+    <author>CHO NAM GI</author>
+    <pubDate>Thu, 30 Oct 2025 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://naaamgi.github.io/sk/5/</guid>
+  </item>
+
+  <item>
+    <title>Rookies 4일차: Python 개념 학습 3</title>
+    <link>https://naaamgi.github.io/sk/4/</link>
+    <description><![CDATA[
+      <p class="notice--danger"><strong>☀️<u>공지 사항</u>☀️</strong> 해당 게시글은 <code class="language-plaintext highlighter-rouge">SK 쉴더스 루키즈, 생성형AI 활용 사이버보안 전문인력 양성과정</code> 을 수업을 듣고 정리한 글입니다. 자세한 교육 정보는  <a href="https://sslc.kr/">SK 쉴더스 홈페이지</a> 를 확인해주세요.</p>
+
+<h1 id="학습-내용-요약-251029">학습 내용 요약 (25/10/29)</h1>
+
+<h2 id="1-분기문-conditional-statements">1. 분기문 (Conditional Statements)</h2>
+
+<p>파이썬에서 <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">elif</code>, <code class="language-plaintext highlighter-rouge">else</code>를 사용한 분기문(조건문)은 특정 조건에 따라 프로그램의 흐름을 제어한다. 이는 특히 보안에서 <strong>입력 값 검증</strong>이나 <strong>접근 제어 로직</strong>을 구현할 때 매우 중요하다.</p>
+
+<h3 id="11-기본-구조">1.1 기본 구조</h3>
+    ]]></description>
+    <author>CHO NAM GI</author>
+    <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://naaamgi.github.io/sk/4/</guid>
+  </item>
+  
+  </channel>
+</rss>
