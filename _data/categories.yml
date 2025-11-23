@@ -35,3 +35,8 @@
 - name: sk
   display_name: "SK 쉴더스 루키즈"
   url: "/categories/sk"
+
+
+- name: normal
+  display_name: "잡담"
+  url: "/categories/normal"
