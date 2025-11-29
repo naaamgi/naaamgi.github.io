@@ -15,6 +15,8 @@
    */
   async function getCommentCount(pathname) {
     try {
+      console.log('확인하는 pathname:', pathname);
+      
       // utterances는 issue_term이 pathname이므로, Issue 제목이 pathname과 일치
       const response = await fetch(`${GITHUB_API}?state=all&per_page=100`);
       
@@ -24,14 +26,18 @@
       }
       
       const issues = await response.json();
+      console.log('가져온 Issues 총 개수:', issues.length);
+      console.log('Issue 제목들:', issues.map(i => i.title));
       
       // pathname과 일치하는 Issue 찾기
       const issue = issues.find(issue => issue.title === pathname);
       
       if (issue) {
+        console.log('찾은 Issue:', issue.title, '댓글 개수:', issue.comments);
         return issue.comments;
       }
       
+      console.log('pathname과 일치하는 Issue를 찾지 못함:', pathname);
       return 0; // Issue가 없으면 댓글도 0개
       
     } catch (error) {
