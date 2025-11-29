@@ -1,0 +1,269 @@
+Ignoring bigdecimal-3.2.2 because its extensions are not built. Try: gem pristine bigdecimal --version 3.2.2
+Ignoring bigdecimal-3.1.8 because its extensions are not built. Try: gem pristine bigdecimal --version 3.1.8
+Ignoring commonmarker-0.23.12 because its extensions are not built. Try: gem pristine commonmarker --version 0.23.12
+Ignoring commonmarker-0.23.11 because its extensions are not built. Try: gem pristine commonmarker --version 0.23.11
+Ignoring debug-1.10.0 because its extensions are not built. Try: gem pristine debug --version 1.10.0
+Ignoring json-2.13.2 because its extensions are not built. Try: gem pristine json --version 2.13.2
+Ignoring nkf-0.2.0 because its extensions are not built. Try: gem pristine nkf --version 0.2.0
+Ignoring racc-1.8.1 because its extensions are not built. Try: gem pristine racc --version 1.8.1
+Ignoring rbs-3.8.0 because its extensions are not built. Try: gem pristine rbs --version 3.8.0
+Ignoring syslog-0.2.0 because its extensions are not built. Try: gem pristine syslog --version 0.2.0
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=syslog version=0.2.0 platform=ruby> because it is missing extensions
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=rbs version=3.8.0 platform=ruby> because it is missing extensions
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=racc version=1.8.1 platform=ruby> because it is missing extensions
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=nkf version=0.2.0 platform=ruby> because it is missing extensions
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=json version=2.13.2 platform=ruby> because it is missing extensions
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=debug version=1.10.0 platform=ruby> because it is missing extensions
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=commonmarker version=0.23.11 platform=ruby> because it is missing extensions
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=commonmarker version=0.23.12 platform=ruby> because it is missing extensions
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=bigdecimal version=3.1.8 platform=ruby> because it is missing extensions
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=bigdecimal version=3.2.2 platform=ruby> because it is missing extensions
+Configuration file: /Users/user/naaamgi.github.io/_config.yml
+To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+            Source: /Users/user/naaamgi.github.io
+       Destination: /Users/user/naaamgi.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "minimal-mistakes/skins/dirt"; // skin
+   │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ╵
+    /Users/user/naaamgi.github.io/assets/css/main.scss 15:9  root stylesheet
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "minimal-mistakes"; // main partials
+   │         ^^^^^^^^^^^^^^^^^^
+   ╵
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9  root stylesheet
+DEPRECATION WARNING [global-builtin]: Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
+Use color.mix instead.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
+   │                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ╵
+    minimal-mistakes/skins/_dirt.scss 15:28                  @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 15:9  root stylesheet
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+2 │ @import "minimal-mistakes/copyright";
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+    minimal-mistakes.scss 2:9                                @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9  root stylesheet
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+5 │ @import "minimal-mistakes/variables";
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+    minimal-mistakes.scss 5:9                                @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9  root stylesheet
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+8 │ @import "minimal-mistakes/vendor/breakpoint/breakpoint";
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+    minimal-mistakes.scss 8:9                                @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9  root stylesheet
+DEPRECATION WARNING [global-builtin]: Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
+Use color.mix instead.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+    ╷
+102 │ $dark-gray: mix(#000, $gray, 50%) !default;
+    │             ^^^^^^^^^^^^^^^^^^^^^
+    ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_variables.scss 102:13  @import
+    minimal-mistakes.scss 5:9                                                    @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                      root stylesheet
+DEPRECATION WARNING [global-builtin]: Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
+Use color.mix instead.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+    ╷
+103 │ $darker-gray: mix(#000, $gray, 60%) !default;
+    │               ^^^^^^^^^^^^^^^^^^^^^
+    ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_variables.scss 103:15  @import
+    minimal-mistakes.scss 5:9                                                    @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                      root stylesheet
+DEPRECATION WARNING [global-builtin]: Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
+Use color.mix instead.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+    ╷
+104 │ $light-gray: mix(#fff, $gray, 50%) !default;
+    │              ^^^^^^^^^^^^^^^^^^^^^
+    ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_variables.scss 104:14  @import
+    minimal-mistakes.scss 5:9                                                    @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                      root stylesheet
+DEPRECATION WARNING [global-builtin]: Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
+Use color.mix instead.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+    ╷
+105 │ $lighter-gray: mix(#fff, $gray, 90%) !default;
+    │                ^^^^^^^^^^^^^^^^^^^^^
+    ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_variables.scss 105:16  @import
+    minimal-mistakes.scss 5:9                                                    @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                      root stylesheet
+DEPRECATION WARNING [slash-div]: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(9, 16)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+31 │ $mfp-iframe-ratio:                    9/16;                       // Ratio of iframe (9/16 = widescreen, 3/4 = standard, etc.)
+   │                                       ^^^^
+   ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/magnific-popup/_settings.scss 31:39      @import
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/magnific-popup/_magnific-popup.scss 3:9  @import
+    minimal-mistakes.scss 10:9                                                                           @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                                              root stylesheet
+DEPRECATION WARNING [slash-div]: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($value, 16px) or calc($value / 16px)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+28 │     @return $value / 16px * 1em;
+   │             ^^^^^^^^^^^^^
+   ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/breakpoint/_helpers.scss 28:13                base-conversion()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/breakpoint/_helpers.scss 20:13                breakpoint-to-base-em()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/breakpoint/parsers/single/_default.scss 8:29  breakpoint-parse-default()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/breakpoint/parsers/_single.scss 22:14         breakpoint-parse-single()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/breakpoint/_parsers.scss 153:18               breakpoint-parse()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/breakpoint/_parsers.scss 48:22                breakpoint()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/breakpoint/_breakpoint.scss 46:16             breakpoint()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_reset.scss 13:3                                     @import
+    minimal-mistakes.scss 15:9                                                                                @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                                                   root stylesheet
+DEPRECATION WARNING [slash-div]: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(5px, 2) or calc(5px / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+28 │     margin-bottom: (5px / 2);
+   │                     ^^^^^^^
+   ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_forms.scss 28:21  @import
+    minimal-mistakes.scss 17:9                                              @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                 root stylesheet
+DEPRECATION WARNING [color-functions]: red() is deprecated. Suggestion:
+
+color.channel($color, "red", $space: rgb)
+
+More info: https://sass-lang.com/d/color-functions
+
+   ╷
+64 │   $red: red($color);
+   │         ^^^^^^^^^^^
+   ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 64:9   yiq-is-light()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 81:14  yiq-contrast-color()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 91:10  yiq-contrasted()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_buttons.scss 50:7  @import
+    minimal-mistakes.scss 22:9                                               @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                  root stylesheet
+DEPRECATION WARNING [color-functions]: green() is deprecated. Suggestion:
+
+color.channel($color, "green", $space: rgb)
+
+More info: https://sass-lang.com/d/color-functions
+
+   ╷
+65 │   $green: green($color);
+   │           ^^^^^^^^^^^^^
+   ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 65:11  yiq-is-light()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 81:14  yiq-contrast-color()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 91:10  yiq-contrasted()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_buttons.scss 50:7  @import
+    minimal-mistakes.scss 22:9                                               @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                  root stylesheet
+DEPRECATION WARNING [color-functions]: blue() is deprecated. Suggestion:
+
+color.channel($color, "blue", $space: rgb)
+
+More info: https://sass-lang.com/d/color-functions
+
+   ╷
+66 │   $blue: blue($color);
+   │          ^^^^^^^^^^^^
+   ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 66:10  yiq-is-light()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 81:14  yiq-contrast-color()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 91:10  yiq-contrasted()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_buttons.scss 50:7  @import
+    minimal-mistakes.scss 22:9                                               @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                  root stylesheet
+DEPRECATION WARNING [slash-div]: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(($red * 299) + ($green * 587) + ($blue * 114), 1000) or calc((($red * 299) + ($green * 587) + ($blue * 114)) / 1000)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+68 │   $yiq: (($red*299)+($green*587)+($blue*114))/1000;
+   │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 68:9   yiq-is-light()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 81:14  yiq-contrast-color()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_mixins.scss 91:10  yiq-contrasted()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_buttons.scss 50:7  @import
+    minimal-mistakes.scss 22:9                                               @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                  root stylesheet
+DEPRECATION WARNING [slash-div]: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($span-width, $container) or calc($span-width / $container)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+93 │     @return percentage($span-width / $container);
+   │                        ^^^^^^^^^^^^^^^^^^^^^^^^
+   ╵
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/susy/susy/_su-math.scss 93:24          su-span()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/susy/susy/_syntax-helpers.scss 190:11  su-call()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/susy/susy/_api.scss 146:13             susy-span()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/susy/susy/_unprefix.scss 19:11         span()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_utilities.scss 177:29                        @content
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/vendor/breakpoint/_breakpoint.scss 66:7       breakpoint()
+    /Users/user/naaamgi.github.io/_sass/minimal-mistakes/_utilities.scss 176:3                         @import
+    minimal-mistakes.scss 31:9                                                                         @import
+    /Users/user/naaamgi.github.io/assets/css/main.scss 16:9                                            root stylesheet
+WARNING: 213 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    done in 1.148 seconds.
+ Auto-regeneration: enabled for '/Users/user/naaamgi.github.io'
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.

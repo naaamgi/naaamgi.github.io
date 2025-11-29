@@ -5,7 +5,11 @@
   <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
   <ul class="nav__items" id="category_tag_menu">
     <!-- 전체 글 수 -->
-    <li>📂 전체 글 수 {{ sum }}개</li>
+    <li>
+      <a href="/" style="text-decoration: none; color: inherit;">
+        📂 전체 글 수 {{ sum }}개
+      </a>
+    </li>
 
     <!-- 보안 개념 공부 -->
     <li>

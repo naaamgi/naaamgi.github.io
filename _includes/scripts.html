@@ -21,6 +21,12 @@
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}
 
+<!-- Utterances Comment Count -->
+<script src="{{ '/assets/js/utterances-comment-count.js' | relative_url }}"></script>
+
+<!-- Category Pagination -->
+<script src="{{ '/assets/js/category-pagination.js' | relative_url }}"></script>
+
 {% if site.after_footer_scripts %}
   {% for script in site.after_footer_scripts %}
     <script src="{{ script | relative_url }}"></script>

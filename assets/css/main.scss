@@ -45,23 +45,64 @@ html {
   font-size: 115%;
 }
 
-// Windows에서 폰트 렌더링 개선
+// 폰트 렌더링 개선
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-weight: 450; // 기본 굵기를 살짝 증가 (400 → 450)
 }
 
-// Windows에서만 Pretendard 폰트 사용
+// Windows에서만 Pretendard 폰트 사용 + 굵기 증가
 @supports (-ms-ime-align: auto) {
   body {
     font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", sans-serif;
+    font-weight: 450; // 기본 굵기를 살짝 증가 (400 → 450)
   }
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   body {
     font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", sans-serif;
+    font-weight: 450; // 기본 굵기를 살짝 증가 (400 → 450)
+  }
+}
+
+// Utterances 댓글 개수 스타일
+.comment-count {
+  font-size: 0.85em;
+  color: #6c757d;
+  margin-left: 0.5em;
+  font-weight: normal;
+  
+  i {
+    margin-right: 0.2em;
+  }
+  
+  // 호버 효과
+  &:hover {
+    color: #495057;
+  }
+}
+
+// 카테고리 페이지 페이지네이션 스타일 (메인 페이지와 동일하게)
+#category-pagination.pagination {
+  ul {
+    li {
+      a {
+        // disabled 클래스 스타일 (메인 페이지와 동일)
+        &.disabled {
+          color: rgba($muted-text-color, 0.5);
+          pointer-events: none;
+          cursor: not-allowed;
+        }
+        
+        // current 클래스 스타일 (현재 페이지)
+        &.current {
+          font-weight: bold;
+          color: $text-color;
+          background-color: transparent !important; // 배경색 제거
+        }
+      }
+    }
   }
 }
