@@ -40,3 +40,11 @@
 - name: normal
   display_name: "잡담"
   url: "/categories/normal"
+
+- name: linux
+  display_name: "Linux"
+  url: "/categories/linux"
+
+- name: project
+  display_name: "Project"
+  url: "/categories/project"

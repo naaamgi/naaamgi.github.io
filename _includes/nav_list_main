@@ -43,6 +43,17 @@
             </li>
           {% endif %}
         {% endfor %}
+
+        {% comment %} linux 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "linux" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
       </ul>
     </li>
 
@@ -50,6 +61,17 @@
     <li>
       <span class="nav__sub-title">보안 실습 공부</span>
       <ul>
+        {% comment %} project 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "project" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
         {% comment %} oscp 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
           {% if category.name == "oscp" %}
@@ -82,8 +104,6 @@
             </li>
           {% endif %}
         {% endfor %}
-        
-
       </ul>
     </li>
 

@@ -6,7 +6,7 @@
    Typography
    ========================================================================== */
 
-$doc-font-size: 14px !default;
+$doc-font-size: 15px !default;
 $doc-font-size-medium: $doc-font-size * 1.125 !default; // 그대로 유지 (약 15.75px)
 // PC 환경 폰트 크기를 맥북에서 편안한 크기 (16px, 17px)로 재조정
 $doc-font-size-large: 16px !default; 
@@ -187,13 +187,14 @@ $base0f: #ff5370 !default;
 
 /*
    Breakpoints
+   $x-large: 1350px !default;
    ========================================================================== */
 
 $small: 600px !default;
 $medium: 768px !default;
 $medium-wide: 900px !default;
 $large: 1024px !default;
-$x-large: 1350px !default;
+$x-large: 1450px !default;
 $max-width: $x-large !default;
 
 /*

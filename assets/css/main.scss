@@ -37,3 +37,16 @@ search: false
     font-weight: 700; // Bold
     font-style: normal;
 }
+
+// 전체 페이지 크기를 110%로 설정
+html {
+  font-size: 115%;
+}
+
+// Windows에서 폰트 렌더링 개선
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-weight: 450; // 기본 굵기를 살짝 증가 (400 → 450)
+}
