@@ -33,18 +33,29 @@
   url: "/categories/cve"
 
 - name: sk
-  display_name: "SK 쉴더스 루키즈"
+  display_name: "SK Shielders Rookies"
   url: "/categories/sk"
-
-
-- name: normal
-  display_name: "잡담"
-  url: "/categories/normal"
 
 - name: linux
   display_name: "Linux"
   url: "/categories/linux"
 
+- name: network
+  display_name: "Network"
+  url: "/categories/network"
+
+- name: python
+  display_name: "Python & LLM"
+  url: "/categories/python"
+
+- name: normal
+  display_name: "잡담"
+  url: "/categories/normal"
+
 - name: project
   display_name: "Project"
   url: "/categories/project"
+
+- name: web
+  display_name: "Web"
+  url: "/categories/web"

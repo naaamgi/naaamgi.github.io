@@ -26,17 +26,6 @@
           {% endif %}
         {% endfor %}
 
-        {% comment %} SK 쉴더스 루키즈 카테고리 {% endcomment %}
-        {% for category in site.data.categories %}
-          {% if category.name == "sk" %}
-            <li>
-              <a href="{{ category.url }}">
-                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
-
         {% comment %} pnt 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
           {% if category.name == "pnt" %}
@@ -48,9 +37,9 @@
           {% endif %}
         {% endfor %}
 
-        {% comment %} linux 카테고리 {% endcomment %}
+        {% comment %} web 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
-          {% if category.name == "linux" %}
+          {% if category.name == "web" %}
             <li>
               <a href="{{ category.url }}">
                 {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
@@ -111,7 +100,44 @@
       </ul>
     </li>
 
-    <!-- 기타 등등 필요한 카테고리 그룹도 위와 같은 패턴으로 추가 -->
+    <!-- SK Shielders Rookies -->
+    <li>
+      <span class="nav__sub-title">SK Shielders Rookies</span>
+      <ul>
+        {% comment %} Linux 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "linux" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} Network 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "network" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} Python 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "python" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
 
     <!-- 유용한 툴 & 정보 -->
     <li>

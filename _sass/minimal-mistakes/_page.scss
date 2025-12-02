@@ -56,6 +56,12 @@ body {
     margin-inline: 0;
     width: 100%;
     clear: both;
+    padding-left: 2.5rem; // 제목, 메타, 본문 전체에 왼쪽 여백 추가
+    
+    // 모바일에서는 여백 줄이기
+    @include breakpoint(max-width $medium) {
+      padding-left: 1rem;
+    }
 
     .page__content,
     .page__meta,

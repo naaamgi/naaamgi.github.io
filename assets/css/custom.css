@@ -3,9 +3,25 @@
 /* 왼쪽 카테고리 사이드바에 오른쪽 경계선 추가 */
 .sidebar {
     /* 가장 연한 사막색(#e9e5d4), 1px 실선 */
-    border-right: 1px solid #e9e5d4; 
-    
+    border-right: 1px solid #e9e5d4;
+
     /* 경계선과 사이드바 내용 사이에 여백 추가 */
-    padding-right: 1.5em; 
+    padding-right: 1.5em;
 }
 
+/* Mermaid 다이어그램 컨테이너 스타일 */
+.mermaid {
+    background-color: #faf8f3;
+    border: 1px solid #d4c5a9;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Mermaid SVG 크기 조정 */
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}

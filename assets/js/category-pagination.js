@@ -6,7 +6,7 @@
 (function() {
   'use strict';
 
-  const POSTS_PER_PAGE = 7; // 페이지당 게시글 수 (_config.yml의 paginate와 동일하게 설정)
+  const POSTS_PER_PAGE = 10; // 페이지당 게시글 수 (_config.yml의 paginate와 동일하게 설정)
 
   /**
    * 카테고리 페이지 체크 및 페이지네이션 적용

@@ -2,5 +2,27 @@
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
+<!-- Mermaid support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'neutral'
+    });
+
+    // Find all code blocks with language-mermaid class
+    document.querySelectorAll('code.language-mermaid').forEach(function(code) {
+      var pre = code.parentElement;
+      var mermaidDiv = document.createElement('div');
+      mermaidDiv.className = 'mermaid';
+      mermaidDiv.textContent = code.textContent;
+      pre.replaceWith(mermaidDiv);
+    });
+
+    mermaid.run();
+  });
+</script>
+
 <!-- end custom head snippets -->
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
