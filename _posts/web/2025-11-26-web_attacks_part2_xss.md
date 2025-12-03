@@ -1,14 +1,14 @@
 ---
-title: "웹 공격 - XSS (Cross-Site Scripting) 공격"
-excerpt: ".."
+title: "웹 공격 Part 2 - XSS (Cross-Site Scripting) 공격"
+excerpt: "XSS(Stored XSS, Reflected XSS, DOM-based XSS)의 차이점과 쿠키 탈취, 키로거 공격 시나리오, HTML 엔티티 인코딩과 CSP 기반 방어 기법을 학습"
 
-categories: [web]
+categories: ['web']
 typora-root-url: ../../
 
 date: 2025-11-26
 last_modified_at: 2025-11-26
 published: true
-tags: [web, security, attack, xss, cross-site-scripting, 정보보안]
+tags: [web, security, attack, xss, cross-site-scripting, stored-xss, reflected-xss, dom-based-xss, cookie-hijacking, csp, httponly, html-entity, 정보보안, 웹공격, 크로스사이트스크립팅, 쿠키탈취]
 ---
 
 ## 개요
@@ -480,6 +480,12 @@ $stmt->execute([$name, $bio, $user_id]);
 
 ## 마무리
 
-XSS는 웹 애플리케이션에서 가장 흔하게 발생하는 취약점 중 하나입니다. Stored XSS는 서버에 악성 코드를 저장하여 불특정 다수에게 피해를 입히고, Reflected XSS는 URL을 통해 특정 사용자를 표적으로 공격하며, DOM-based XSS는 클라이언트 측에서만 발생하여 탐지가 어렵습니다.
+이번 Part 2에서는 XSS(Cross-Site Scripting) 공격의 세 가지 주요 유형과 방어 기법을 상세히 살펴보았습니다. **Stored XSS(저장형)**는 게시판이나 자료실에 악성 스크립트를 저장하여 불특정 다수에게 지속적으로 공격하는 가장 위험한 유형입니다. 악성 코드가 서버에 영구 저장되어 피해 범위가 넓고, 공격자는 별도의 추가 행동 없이도 피해자를 양산할 수 있습니다.
 
-효과적인 방어를 위해서는 **모든 사용자 입력을 신뢰하지 않고**, 출력 시 적절한 인코딩을 적용하며, 서버 측에서 검증을 수행하고, CSP와 HttpOnly 쿠키 등 다층 방어 전략을 적용해야 합니다.
+**Reflected XSS(반사형)**는 악성 스크립트가 포함된 URL을 통해 공격하는 방식으로, 서버에 흔적을 남기지 않고 URL을 클릭한 특정 사용자만을 표적으로 합니다. 이메일이나 SNS를 통해 URL을 전파하며, 인코딩(`%3Cscript%3E`)을 사용해 악의적인 코드를 숨깁니다. **DOM-based XSS**는 서버가 아닌 클라이언트의 JavaScript에서 DOM을 조작하며 발생하므로 서버 로그에 흔적이 남지 않아 탐지가 어렵습니다.
+
+효과적인 XSS 방어를 위해서는 **"모든 사용자 입력을 신뢰하지 않는다"**는 원칙이 가장 중요합니다. `htmlspecialchars()` 같은 함수로 `<`, `>`, `"`, `'` 등 특수문자를 HTML 엔티티(`&lt;`, `&gt;` 등)로 변환하여 무력화해야 합니다. 클라이언트 검증은 쉽게 우회되므로 **서버 측 검증이 필수**이며, `Content-Security-Policy` 헤더로 스크립트 실행 출처를 제한하고, `HttpOnly` 쿠키 설정으로 JavaScript의 쿠키 접근을 차단해야 합니다.
+
+XSS는 단순해 보이지만 쿠키 탈취, 키로거 설치, 피싱 페이지 변조 등 다양한 2차 공격의 시발점이 됩니다. 출력되는 컨텍스트(HTML 본문, 속성, JavaScript, URL, CSS)에 따라 적절한 인코딩 방법을 선택하고, WAF(웹 애플리케이션 방화벽) 등 다층 방어 전략을 구축하여 종합적으로 대응해야 합니다.
+
+**Part 3에서는** CSRF(Cross-Site Request Forgery) 공격과 웹쉘(Webshell) 업로드 취약점을 학습하고, 세션 토큰 검증과 파일 업로드 필터링 기법을 살펴보겠습니다.

@@ -1,14 +1,14 @@
 ---
-title: "웹 공격 - Slow HTTP 공격 (Slowloris, RUDY, Slow Read DoS)"
-excerpt: ".."
+title: "웹 공격 Part 5 - Slow HTTP 공격 (Slowloris, RUDY, Slow Read DoS)"
+excerpt: "Slowloris(헤더 지연), RUDY(POST 데이터 지연), Slow Read(응답 수신 지연)의 공격 원리와 Connection Timeout, Rate Limiting, WAF 기반 종합 방어 전략을 학습."
 
-categories: [web]
+categories: ['web']
 typora-root-url: ../../
 
 date: 2025-11-26
 last_modified_at: 2025-11-26
 published: true
-tags: [web, security, attack, slow-http, slowloris, rudy, dos, 정보보안]
+tags: [web, security, attack, slow-http, slowloris, rudy, slow-read, dos, ddos, tcp-window, content-length, connection-timeout, rate-limiting, 정보보안, 웹공격, 서비스거부공격, 슬로우HTTP]
 ---
 
 ## 개요
@@ -736,4 +736,12 @@ backend web_servers
 
 ## 마무리
 
-Slow HTTP 공격은 적은 리소스로 큰 피해를 줄 수 있는 효율적인 DoS 공격입니다. Slowloris는 헤더를 천천히 보내고, RUDY는 POST 데이터를 천천히 보내며, Slow Read는 응답을 천천히 받아 서버 자원을 고갈시킵니다. 효과적인 방어를 위해서는 **타임아웃 설정, 연결 수 제한, WAF 사용, Rate Limiting** 등 다층 방어 전략을 적용해야 합니다.
+이번 Part 5에서는 Slow HTTP 공격이라는 교묘한 DoS 공격 기법을 학습했습니다. 전통적인 DDoS 공격과 달리 Slow HTTP는 **대량의 트래픽이나 봇넷 없이도 적은 리소스로 서버를 마비**시킬 수 있어 탐지가 어렵고 방어가 까다롭습니다. **Slowloris**는 HTTP 헤더를 완성하지 않고 조금씩 전송하여(`X-a: b[CRLF]... 지연... X-b: c[CRLF]`) 서버가 헤더 종료를 알리는 `[CRLF][CRLF]`를 기다리며 연결을 장시간 유지하게 만듭니다. 500개 정도의 소켓만으로도 Apache 같은 웹 서버의 최대 동시 접속 수를 고갈시킬 수 있습니다.
+
+**RUDY(R-U-Dead-Yet?)**는 POST 데이터 전송을 공격하는 기법입니다. `Content-Length: 1000000`처럼 대용량 데이터를 전송하겠다고 선언한 뒤 실제로는 1바이트씩 매우 느리게 전송하여 서버가 데이터를 계속 기다리게 만듭니다. `Transfer-Encoding: chunked`로 데이터를 조각내거나 `Expect: 100-continue` 헤더로 서버의 응답을 계속 기다리게 하는 등 다양한 변형 기법이 존재합니다. 업로드 폼이나 게시판 같은 POST를 사용하는 페이지가 주요 타겟입니다.
+
+**Slow Read DoS**는 앞의 두 공격과 반대로 **응답을 천천히 수신**하는 방식입니다. TCP Window Size를 1바이트처럼 극도로 작게 설정하거나 데이터 처리율을 낮춰 서버가 데이터를 전송하고 클라이언트의 수신을 계속 대기하게 만듭니다. 정상 통신에서는 TCP Window가 64KB~1MB인 반면, Slow Read 공격에서는 1~10바이트로 설정하여 서버의 송신 버퍼를 가득 채우고 다른 사용자의 응답을 지연시킵니다.
+
+Slow HTTP 방어의 핵심은 **연결 타임아웃 설정과 최소 전송 속도 보장**입니다. Apache의 `RequestReadTimeout header=20-40,MinRate=500`, Nginx의 `client_header_timeout 10s`, `client_body_timeout 12s`, `send_timeout 10s` 같은 설정으로 느린 연결을 강제 종료해야 합니다. `KeepAliveTimeout`을 2~5초로 짧게 설정하고, IP당 최대 연결 수(`QS_SrvMaxConnPerIP 20`, `limit_conn addr 10`)를 제한하며, POST 바디 크기(`LimitRequestBody 1048576`, `client_max_body_size 1m`)를 제한해야 합니다. ModSecurity 같은 WAF로 느린 클라이언트 패턴을 탐지하고, Rate Limiting(`limit_req_zone rate=10r/s`)으로 요청 속도를 제한하며, HAProxy나 Cloudflare 같은 리버스 프록시/CDN으로 원본 서버를 보호하는 종합 방어 전략이 필요합니다.
+
+웹 공격 Part 1~5를 통해 Command Injection, XSS, CSRF, 웹쉘, SQL Injection, Slow HTTP 등 주요 웹 취약점과 방어 기법을 모두 학습했습니다. 모든 공격의 공통점은 **사용자 입력 검증 부재**와 **서버 설정 취약점**에서 시작된다는 것입니다. 입력 검증, 출력 인코딩, Prepared Statement, CSRF 토큰, 파일 검증, 타임아웃 설정 등 각 공격에 맞는 방어 기법을 적용하고, 다층 방어(Defense in Depth) 전략으로 종합적인 보안 체계를 구축하는 것이 안전한 웹 애플리케이션 개발의 핵심입니다.

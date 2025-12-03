@@ -1,14 +1,12 @@
 ---
-title: "네트워크 기초 Part 4: 스위칭 & VLAN"
-excerpt: ".."
-
-categories: network
+title: "네트워크 기초 Part 4 - 스위칭과 VLAN"
+excerpt: "스위치의 5가지 동작 원리, MAC 주소 학습, VLAN을 통한 브로드캐스트 도메인 분리, Inter-VLAN 라우팅 등"
+categories: ['sk', 'network']
 typora-root-url: ../../
-
-date: 2025-11-23
-last_modified_at: 2025-11-23
 published: true
-tags: [network, switch, vlan, stp, layer2]
+date: 2025-11-23
+last_modified_at: 2025-12-03
+tags: [network, switch, vlan, stp, layer2, mac-table, broadcast-domain, trunk, access-port]
 ---
 
 ## 📚 전체 흐름 요약
@@ -482,10 +480,14 @@ PC1 (VLAN 10) → PC2 (VLAN 20) 통신
 
 ## 8. 마무리
 
-### 핵심 요점
+이번 Part 4에서는 **Layer 2 네트워킹의 핵심인 스위치와 VLAN**을 체계적으로 학습했습니다. **Collision Domain**은 데이터 충돌이 발생하는 영역으로 스위치가 포트별로 분리하며, **Broadcast Domain**은 브로드캐스트 패킷이 전파되는 영역으로 라우터 또는 VLAN이 분리합니다. 허브는 모든 포트가 하나의 Collision Domain이지만, 스위치는 각 포트가 독립적인 Collision Domain을 형성하여 충돌을 방지합니다.
 
-1. **스위치는 MAC 주소 기반**으로 프레임을 전달합니다.
-2. **Collision Domain은 Layer 2**에서, **Broadcast Domain은 Layer 3**에서 분리합니다.
-3. **VLAN은 논리적 네트워크 분리**를 통해 보안과 성능을 향상시킵니다.
-4. **Inter-VLAN 라우팅**은 라우터 또는 L3 스위치가 필요합니다.
-5. **STP는 루프를 방지**하여 네트워크 안정성을 보장합니다.
+**스위치의 5가지 기본 동작**을 이해했습니다. Learning(MAC 주소 학습), Flooding(미지의 목적지로 전체 전송), Forwarding(알려진 목적지로만 전송), Filtering(같은 포트 차단), Aging(오래된 항목 삭제) 과정을 통해 효율적인 프레임 전달이 가능합니다. MAC 주소 테이블은 300초(기본값) 동안 유지되며, 지속적으로 갱신됩니다.
+
+**VLAN**(Virtual LAN)을 통해 물리적으로 같은 스위치에 연결되어 있어도 **논리적으로 네트워크를 분리**할 수 있습니다. VLAN은 브로드캐스트 도메인을 축소하여 네트워크 성능을 향상시키고, 부서별/용도별 네트워크 분리로 보안을 강화합니다. Access 포트는 하나의 VLAN만 처리하며 PC/서버와 연결하고, Trunk 포트는 여러 VLAN을 802.1Q 태깅으로 전송하여 스위치 간 연결에 사용됩니다.
+
+**Inter-VLAN 라우팅**을 통해 서로 다른 VLAN 간 통신이 가능합니다. 라우터 방식(Router-on-a-Stick)은 서브인터페이스를 생성하여 처리하고, L3 스위치 방식은 SVI(Switch Virtual Interface)를 통해 더 빠른 성능을 제공합니다. STP(Spanning Tree Protocol)는 네트워크 루프를 방지하여 브로드캐스트 스톰을 차단하고, Root Bridge 선출과 포트 상태 관리로 안정적인 토폴로지를 유지합니다.
+
+네트워크 Part 1~4를 모두 마무리하며, 네트워크 기초 개념부터 IP 주소 체계, 네트워크 서비스, Layer 2 스위칭까지 **실무 네트워크 구축에 필요한 핵심 기술**을 모두 학습했습니다. 이제 여러분은 소규모부터 중규모 네트워크를 설계하고 구축하며, 문제를 진단하고 해결할 수 있는 역량을 갖추었습니다.
+
+---

@@ -1,14 +1,12 @@
 ---
-title: "HTTP 프로토콜과 Apache 서버"
-excerpt: ".."
-
-categories: [network, web]
+title: "웹 보안 Part 1 - HTTP 프로토콜과 Apache 서버"
+excerpt: "HTTP의 Stateless/Connectionless 특성, 쿠키와 세션을 통한 상태 관리, GET/POST 메소드 차이, HTTP 응답 코드, Apache 웹 서버 동작 원리를 학습합니다."
+categories: ['sk', 'web']
 typora-root-url: ../../
-
-date: 2025-11-25
-last_modified_at: 2025-11-25
 published: true
-tags: [web, security, http, apache, 정보보안]
+date: 2025-11-25
+last_modified_at: 2025-12-03
+tags: [web, security, http, apache, stateless, connectionless, cookie, session, cgi, ssl-tls]
 ---
 
 ## 개요
@@ -251,4 +249,16 @@ username=kim&age=20
 
 ## 마무리
 
-HTTP 프로토콜의 Stateless와 Connectionless 특성은 웹 보안의 기초입니다. 쿠키와 세션을 통한 상태 관리, GET/POST 데이터 전송 방식의 차이, 그리고 다양한 HTTP 응답 코드를 이해하는 것이 웹 애플리케이션 보안의 첫걸음입니다.
+이번 Part 1에서는 **HTTP 프로토콜의 핵심 특성과 Apache 웹 서버의 동작 원리**를 학습했습니다. HTTP는 **Stateless 프로토콜**로 클라이언트의 상태 정보를 유지하지 않으며, 이를 보완하기 위해 **쿠키**(클라이언트 측 저장)와 **세션**(서버 측 저장)을 사용합니다. 쿠키는 위/변조가 쉽고, 세션은 탈취 위험이 있으므로 보안에 주의해야 합니다.
+
+또한 HTTP는 **Connectionless 프로토콜**로 요청/응답 후 연결을 즉시 종료하여 서버 자원을 효율적으로 사용하지만, 매번 TCP 연결을 맺어야 하는 오버헤드가 있습니다. 이를 해결하기 위해 **Persistent Connection**(keep-alive)을 통해 연결을 일정 시간 유지합니다.
+
+**GET과 POST 메소드**의 차이를 명확히 이해했습니다. GET은 URL에 데이터를 노출하여 보안에 취약하고 데이터 길이에 제한이 있지만 북마크와 캐싱이 가능합니다. POST는 HTTP Body에 데이터를 전송하여 보안성이 높고 대용량 데이터 전송이 가능하지만 캐싱이 불가능합니다.
+
+**Apache 웹 서버**는 정적 콘텐츠(HTML, CSS, JS)와 동적 콘텐츠(CGI, PHP, JSP)를 모두 처리할 수 있으며, **CGI**(Common Gateway Interface)를 통해 백엔드 프로그램과 통신합니다. ASP, PHP, Servlet, JSP 등 다양한 확장 CGI 기술이 동적 웹 페이지 생성에 사용됩니다.
+
+**HTTP 응답 코드**를 통해 요청 처리 상태를 파악할 수 있습니다. 2xx는 성공, 3xx는 리다이렉션, 4xx는 클라이언트 오류(400 잘못된 요청, 401 인증 실패, 403 권한 거부, 404 리소스 없음), 5xx는 서버 오류(500 내부 오류, 503 서비스 불가)를 의미합니다.
+
+다음 Part 2에서는 **HTTP 보안 헤더와 캐시 제어**를 학습합니다. X-Frame-Options, X-XSS-Protection, Content-Security-Policy 등 보안 헤더를 통한 공격 방어, Cache-Control과 Expires를 이용한 캐시 관리, SSL/TLS를 통한 암호화 통신 등을 익히게 됩니다.
+
+---

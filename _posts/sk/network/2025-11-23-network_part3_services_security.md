@@ -1,14 +1,12 @@
 ---
-title: "네트워크 기초 Part 3: 네트워크 서비스 & 보안"
-excerpt: ".."
-
-categories: network
+title: "네트워크 기초 Part 3 - 네트워크 서비스와 보안"
+excerpt: "DHCP를 통한 자동 IP 할당, NAT를 이용한 주소 변환, ACL 기반 접근 제어, 방화벽 설정 등"
+categories: ['sk', 'network']
 typora-root-url: ../../
-
-date: 2025-11-23
-last_modified_at: 2025-11-23
 published: true
-tags: [network, dhcp, nat, acl, security, firewall]
+date: 2025-11-23
+last_modified_at: 2025-12-03
+tags: [network, dhcp, nat, pat, acl, security, firewall, port-scan, dns]
 ---
 
 ## 📚 전체 흐름 요약
@@ -620,12 +618,16 @@ UDP는 비연결성이므로 **ICMP 응답**으로 판단
 - 마지막에 `permit any` 또는 `deny any` 명시
 - Extended ACL은 출발지 근처에 적용
 
-### 다음 단계
+### 마무리
 
-Part 4에서는 다음 내용을 다룹니다:
-- 스위치 동작 원리
-- VLAN (Virtual LAN)
-- Inter-VLAN 라우팅
-- STP (Spanning Tree Protocol)
+이번 Part 3에서는 **실무 네트워크 서비스와 보안 기술**을 종합적으로 학습했습니다. **DHCP**를 통해 IP 주소를 자동으로 할당받는 4단계 DORA 과정(Discover, Offer, Request, ACK)을 이해하고, DHCP 릴레이를 통해 다른 네트워크에 있는 DHCP 서버와 통신하는 방법을 익혔습니다.
+
+**NAT**(Network Address Translation)와 **PAT**(Port Address Translation)의 차이를 명확히 구분하며, 사설 IP를 공인 IP로 변환하여 인터넷 통신을 가능하게 하는 원리를 파악했습니다. Static NAT는 1:1 매핑으로 서버에 적합하고, Dynamic NAT는 Pool 방식으로 여러 공인 IP를 공유하며, PAT는 포트를 이용해 하나의 공인 IP로 여러 사설 IP를 동시에 인터넷에 연결할 수 있습니다.
+
+**ACL**(Access Control List)을 통한 네트워크 접근 제어 기법을 학습했습니다. Standard ACL은 출발지 IP만 검사하고, Extended ACL은 출발지/목적지 IP, 프로토콜, 포트까지 세밀하게 제어합니다. ACL은 위에서 아래로 순차 검사하므로 구체적인 규칙을 먼저 배치하고, 마지막에 deny any로 기본 차단하는 것이 원칙입니다.
+
+**방화벽**의 개념과 포트 스캔 대응 방법을 이해하며, Stateless 방화벽(패킷 필터링)과 Stateful 방화벽(상태 추적)의 차이를 파악했습니다. nmap을 이용한 포트 스캔 기법과 이에 대한 방어 전략도 학습했습니다.
+
+다음 Part 4에서는 Layer 2 네트워킹의 핵심인 **스위치 동작 원리와 VLAN**을 학습합니다. 스위치의 5가지 동작(Learning, Flooding, Forwarding, Filtering, Aging), MAC 주소 테이블 관리, VLAN을 통한 브로드캐스트 도메인 분리, Inter-VLAN 라우팅, STP를 이용한 루프 방지 등 실무 네트워크 구축의 필수 기술을 익히게 됩니다.
 
 ---

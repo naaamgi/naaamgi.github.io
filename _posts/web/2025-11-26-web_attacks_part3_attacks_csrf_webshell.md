@@ -1,14 +1,14 @@
 ---
-title: "웹 공격 - CSRF, 웹쉘, 파일 업로드 취약점"
-excerpt: ".."
+title: "웹 공격 Part 3 - CSRF, 웹쉘, 파일 업로드 취약점"
+excerpt: "CSRF, 웹쉘 업로드를 통한 서버 제어권 탈취 위협과 CSRF 토큰, SameSite 쿠키, 파일 확장자·MIME 타입 검증, 업로드 디렉터리 실행 권한 제거 등 종합 방어 전략을 학습"
 
-categories: [web]
+categories: ['web']
 typora-root-url: ../../
 
 date: 2025-11-26
 last_modified_at: 2025-11-26
 published: true
-tags: [web, security, attack, csrf, webshell, file-upload, 정보보안]
+tags: [web, security, attack, csrf, webshell, file-upload, csrf-token, samesite-cookie, mime-type, double-extension, null-byte, 정보보안, 웹공격, 사이트간요청위조, 웹쉘, 파일업로드취약점]
 ---
 
 ## 개요
@@ -602,4 +602,12 @@ function secure_file_upload($file) {
 
 ## 마무리
 
-CSRF 공격은 인증된 사용자의 권한을 도용하여 의도하지 않은 행위를 수행하게 하는 공격으로, CSRF 토큰, SameSite 쿠키, Referrer 검증 등 다층 방어가 필요합니다. 웹쉘 공격은 파일 업로드 취약점을 통해 서버 제어권을 탈취하는 위험한 공격이므로, 엄격한 파일 검증과 실행 권한 제거가 필수적입니다.
+이번 Part 3에서는 CSRF와 웹쉘 공격이라는 서로 다른 공격 벡터를 학습했습니다. **CSRF(Cross-Site Request Forgery)**는 XSS와 달리 클라이언트가 아닌 **서버를 공격 대상**으로 합니다. 인증된 사용자의 세션을 악용해 게시물 작성/삭제, 회원 정보 변경, 심지어 관리자 계정 생성까지 의도하지 않은 행위를 수행하게 만듭니다. 특히 관리자 권한으로 CSRF 공격이 성공하면 시스템 전체가 위험에 빠질 수 있습니다.
+
+CSRF 방어의 핵심은 **예측 불가능한 CSRF 토큰**을 모든 중요한 요청에 포함시켜 검증하는 것입니다. `SameSite=Strict` 쿠키 속성으로 크로스 사이트 요청에서 쿠키 전송을 차단하고, Referrer 검증으로 요청 출처를 확인하며, 중요한 작업에는 비밀번호 재입력이나 CAPTCHA를 요구하는 다층 방어 전략이 필요합니다. Double Submit Cookie 패턴도 유용하지만, 세션 기반 CSRF 토큰이 가장 안전합니다.
+
+**웹쉘(Web Shell) 공격**은 파일 업로드 취약점을 악용해 서버에 악성 스크립트를 업로드하고 원격으로 서버를 제어하는 공격입니다. `shell.php.jpg`(더블 확장자), `shell.php%00.jpg`(null byte), `shell.PHP`(대소문자) 등 다양한 확장자 필터 우회 기법이 존재합니다. 일단 웹쉘이 업로드되고 실행되면 파일 조회, 계정 정보 탈취, 데이터베이스 접근, 심지어 시스템 명령어 실행까지 가능해 서버 전체가 공격자의 통제 하에 놓입니다.
+
+웹쉘 방어는 **화이트리스트 기반 확장자 검증**부터 시작합니다. 블랙리스트 방식은 우회가 쉬우므로 허용된 확장자(`jpg`, `png` 등)만 명시적으로 허용해야 합니다. MIME 타입 검증(`finfo`)과 실제 파일 내용 검증(`getimagesize()`)을 조합하고, 업로드된 파일명은 `uniqid()`나 `random_bytes()`로 재생성하며, **업로드 디렉터리에서 PHP/JSP/ASP 실행을 금지**(`php_flag engine off`)해야 합니다. 가능하다면 AWS S3 같은 외부 저장소에 파일을 저장하여 웹 서버와 분리하는 것이 가장 안전합니다.
+
+**Part 4에서는** SQL Injection 공격의 원리와 Union, Blind, Error-based SQL Injection 기법, Prepared Statement와 입력 검증 기반 방어 전략을 학습하겠습니다.

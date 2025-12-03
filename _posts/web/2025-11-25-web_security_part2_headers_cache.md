@@ -1,6 +1,6 @@
 ---
-title: "HTTP 헤더, 쿠키, 캐시, SSL/TLS"
-excerpt: ".."
+title: "웹 보안 Part 2 - HTTP 헤더, 쿠키, 캐시, SSL/TLS"
+excerpt: "HTTP 헤더의 구조와 종류, 쿠키 보안 설정, 캐시 제어 메커니즘, 그리고 SSL/TLS를 통한 암호화 통신에 대해 알아보자."
 
 categories: [network, web]
 tags: [web, security, http, cookie, cache, ssl, tls, 정보보안]
@@ -313,4 +313,14 @@ systemctl restart httpd
 
 ## 마무리
 
-HTTP 헤더를 통한 정보 전달, 쿠키의 보안 옵션(HttpOnly, SameSite), 캐시 제어 메커니즘, 그리고 SSL/TLS를 통한 암호화 통신은 웹 보안의 핵심 요소입니다. XSS와 CSRF 공격을 방지하고, 효율적인 캐시 관리를 통해 안전하고 빠른 웹 서비스를 제공할 수 있습니다.
+이번 Part 2에서는 **HTTP 보안 헤더, 쿠키 보안 옵션, 캐시 제어, SSL/TLS 암호화 통신**의 핵심 개념을 학습했습니다. **보안 HTTP 헤더**를 통해 다양한 웹 공격을 방어할 수 있습니다. X-Frame-Options는 클릭재킹 방어, X-XSS-Protection은 XSS 필터 활성화, X-Content-Type-Options는 MIME 스니핑 방지, Content-Security-Policy(CSP)는 XSS와 데이터 인젝션 공격 방어에 사용됩니다.
+
+**쿠키 보안 옵션**의 중요성을 이해했습니다. **HttpOnly** 플래그는 JavaScript의 document.cookie 접근을 차단하여 XSS 공격으로부터 쿠키를 보호하고, **Secure** 플래그는 HTTPS 연결에서만 쿠키 전송을 허용하며, **SameSite** 속성(Strict, Lax, None)은 CSRF 공격을 방어합니다. 이러한 옵션들을 적절히 조합하면 세션 탈취와 CSRF 공격을 효과적으로 차단할 수 있습니다.
+
+**캐시 제어 메커니즘**을 통해 성능과 보안을 동시에 확보할 수 있습니다. **Cache-Control** 헤더는 캐시 동작을 세밀하게 제어하며, no-store는 캐시 저장 금지, no-cache는 재검증 필수, private는 개인 전용 캐시, public은 공유 캐시 허용, max-age는 캐시 유효 기간을 지정합니다. **Expires** 헤더는 절대 만료 시간을 설정하고, **ETag**와 **Last-Modified**는 조건부 요청으로 대역폭을 절약합니다.
+
+**SSL/TLS 암호화 통신**은 HTTPS의 기반입니다. TLS는 SSL의 후속 버전으로, 비대칭 키(공개키/개인키)로 세션 키를 교환하고 대칭 키로 데이터를 암호화합니다. TLS Handshake 과정(Client Hello, Server Hello, Certificate, Key Exchange)을 통해 안전한 채널을 수립하며, 인증서는 CA(Certificate Authority)가 발급하여 서버의 신원을 보증합니다. Apache에서 mod_ssl 모듈을 활성화하고 인증서를 설정하면 HTTPS 서비스를 제공할 수 있습니다.
+
+다음 Part 3에서는 **Apache 설정과 웹 취약점**(LFI/RFI)을 학습합니다. Virtual Host 구성, Directory 접근 제어, robots.txt를 통한 크롤링 제어, 그리고 Local File Inclusion(LFI)과 Remote File Inclusion(RFI) 취약점의 원리와 방어 기법을 익히게 됩니다.
+
+---

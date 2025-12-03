@@ -1,14 +1,14 @@
 ---
-title: "웹 공격 - OS Command Injection, 디렉터리 인덱싱, 정보 노출"
-excerpt: ".."
+title: "웹 공격 Part 1 - OS Command Injection, 디렉터리 인덱싱, 정보 노출"
+excerpt: "OS Command Injection, 디렉터리 인덱싱과 정보 노출, Directory Traversal 공격 기법과 대응 방안을 학습"
 
-categories: [web]
+categories: ['web']
 typora-root-url: ../../
 
 date: 2025-11-26
 last_modified_at: 2025-11-26
 published: true
-tags: [web, security, attack, command-injection, 정보보안]
+tags: [web, security, attack, command-injection, directory-listing, information-disclosure, directory-traversal, path-traversal, malware, 웹공격, 명령어인젝션, 디렉터리인덱싱, 정보노출, 경로탐색]
 ---
 
 ## 개요
@@ -252,4 +252,12 @@ Trojan/Win32.RL_Jorik.C4172791
 
 ## 마무리
 
-웹 애플리케이션의 취약점은 사용자 입력 검증의 부재에서 시작됩니다. OS Command Injection은 시스템 명령어 실행을 허용하고, 디렉터리 인덱싱은 파일 구조를 노출하며, 정보 노출은 2차 공격의 발판이 됩니다. 철저한 입력 검증과 서버 설정의 안전성 확보가 필수적입니다.
+이번 Part 1에서는 웹 애플리케이션의 기본적이면서도 치명적인 취약점들을 살펴보았습니다. **OS Command Injection**은 사용자 입력을 통해 시스템 명령어를 직접 실행할 수 있는 가장 위험한 취약점 중 하나입니다. `system()`, `exec()` 같은 함수 사용 시 입력값 필터링은 필수이며, `&`, `|`, `;` 같은 명령어 연결 문자에 대한 철저한 검증이 필요합니다.
+
+**디렉터리 인덱싱(Directory Listing)**은 웹 서버 설정 오류로 인해 파일 목록이 노출되는 취약점입니다. Apache의 `Indexes` 옵션, IIS의 디렉터리 검색 기능, Tomcat의 `listings` 설정을 반드시 비활성화해야 합니다. 단순해 보이지만 백업 파일이나 숨겨진 관리자 페이지를 발견하는 실마리가 되므로 반드시 점검해야 합니다.
+
+**정보 노출 취약점**은 에러 메시지, 관리자 페이지 URL 유추, 기본 계정 사용 등 다양한 형태로 나타납니다. 에러 페이지에서 데이터베이스 정보나 절대 경로가 노출되면 공격자에게 귀중한 정보를 제공하게 됩니다. `ErrorDocument` 설정으로 통합 에러 페이지를 구성하고, 관리자 페이지는 유추하기 어려운 URL과 IP 기반 접근 제어를 적용해야 합니다.
+
+**Directory Traversal(경로 탐색) 공격**은 `../` 시퀀스를 이용해 의도하지 않은 디렉터리의 파일에 접근하는 기법입니다. URL 인코딩(`%2e%2e%2f`), 이중 인코딩(`%252e`), null 바이트(`%00`) 등 다양한 우회 기법이 존재하므로, 화이트리스트 기반의 파일명 검증과 절대 경로 사용이 권장됩니다. 이러한 기본 취약점들을 이해하고 대응하는 것이 안전한 웹 애플리케이션 개발의 첫걸음입니다.
+
+**Part 2에서는** XSS(Cross-Site Scripting) 공격의 원리와 다양한 유형(Stored, Reflected, DOM-based)을 학습하고, 실제 공격 시나리오와 방어 기법을 살펴보겠습니다.

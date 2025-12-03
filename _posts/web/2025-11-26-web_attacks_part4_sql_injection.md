@@ -1,14 +1,14 @@
 ---
-title: "웹 공격 - SQL Injection 공격"
-excerpt: ".."
+title: "웹 공격 Part 4 - SQL Injection 공격"
+excerpt: "SQL Injection(Error-based, Union-based, Boolean/Time-based Blind SQLi, Mass SQL Injection, xp_cmdshell 등) 공격 기법과 Prepared Statement, 입력 검증, 최소 권한 원칙 기반 방어 전략을 학습"
 
-categories: [web]
+categories: ['web']
 typora-root-url: ../../
 
 date: 2025-11-26
 last_modified_at: 2025-11-26
 published: true
-tags: [web, security, attack, sql-injection, database, 정보보안]
+tags: [web, security, attack, sql-injection, database, error-based-sqli, union-based-sqli, blind-sqli, time-based-sqli, mass-sqli, prepared-statement, xp_cmdshell, 정보보안, 웹공격, SQL인젝션, 데이터베이스공격]
 ---
 
 ## 개요
@@ -725,4 +725,12 @@ $post = $stmt->fetch();
 
 ## 마무리
 
-SQL Injection은 웹 애플리케이션에서 가장 위험한 취약점 중 하나로, Error-based, Union-based, Blind, Time-based, Mass SQL Injection 등 다양한 공격 기법이 존재합니다. 효과적인 방어를 위해서는 **Prepared Statement 사용이 필수**이며, 입력값 검증, 에러 메시지 숨김, 최소 권한 원칙 등 다층 방어 전략을 적용해야 합니다.
+이번 Part 4에서는 SQL Injection 공격의 다양한 유형과 방어 기법을 심도 있게 학습했습니다. SQL Injection은 사용자 입력을 조작하여 의도하지 않은 SQL 쿼리를 실행시키는 공격으로, OWASP Top 10에 지속적으로 포함되는 치명적인 취약점입니다. **Error-based SQLi**는 의도적으로 에러를 발생시켜 데이터베이스 이름, 테이블 구조 등 민감 정보를 에러 메시지에서 수집하는 기법이며, **Union-based SQLi**는 `UNION SELECT` 구문으로 정상 쿼리에 악의적인 쿼리를 결합하여 인증 정보나 관리자 데이터를 직접 탈취합니다.
+
+**Blind SQL Injection**은 에러 메시지가 노출되지 않는 환경에서 사용하는 고급 기법입니다. Boolean-based Blind SQLi는 `' and 1=1--`(참)과 `' and 1=2--`(거짓) 같은 조건으로 페이지 응답 차이를 관찰하며 `substring()`과 `ascii()`로 데이터베이스 이름을 한 글자씩 추출합니다. Time-based Blind SQLi는 `SLEEP(5)`, `WAITFOR DELAY`, `pg_sleep()` 함수로 응답 시간 지연을 유발해 조건의 참/거짓을 판단합니다. 두 기법 모두 자동화 도구(sqlmap 등)와 결합하면 효율적으로 데이터를 탈취할 수 있습니다.
+
+**Mass SQL Injection**은 한 번의 공격으로 데이터베이스의 모든 테이블, 모든 텍스트 컬럼에 악성 스크립트를 삽입하는 대규모 공격입니다. HEX 인코딩(`0x3C736372697074...`)으로 필터를 우회하며, 감염된 페이지에 접속한 모든 사용자가 악성코드에 감염됩니다. **Stored Procedure 공격**은 MS SQL의 `xp_cmdshell` 같은 확장 프로시저를 악용해 시스템 명령어를 직접 실행하여 계정 생성(`net user`), 권한 상승(`net localgroup administrators`) 등 서버 전체를 장악할 수 있습니다.
+
+SQL Injection 방어의 핵심은 **Prepared Statement(파라미터화된 쿼리) 사용**입니다. 쿼리 구조를 먼저 정의하고 사용자 입력은 바인딩 변수로 처리하여 SQL 문법적 의미를 갖지 못하게 만듭니다. PHP의 PDO/MySQLi, Java의 PreparedStatement, Python의 parameterized query가 대표적입니다. 추가로 입력값 화이트리스트 검증(`preg_match('/^[0-9]+$/')`), 특수문자 필터링(`mysqli_real_escape_string()`), SQL 키워드 필터링(union, select, exec), 에러 메시지 숨김(`display_errors=0`), 데이터베이스 계정 최소 권한 부여(SELECT, INSERT만 허용), xp_cmdshell 비활성화 등 다층 방어 전략을 구축해야 합니다.
+
+**Part 5에서는** Slow HTTP DoS 공격(Slowloris, Slow POST, Slow Read)의 원리와 Connection Timeout 설정, Rate Limiting, 웹 서버 하드닝 기법을 학습하겠습니다.

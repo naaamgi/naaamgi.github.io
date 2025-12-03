@@ -48,6 +48,10 @@
   display_name: "Python & LLM"
   url: "/categories/python"
 
+- name: cloud
+  display_name: "Cloud"
+  url: "/categories/cloud"
+
 - name: normal
   display_name: "잡담"
   url: "/categories/normal"

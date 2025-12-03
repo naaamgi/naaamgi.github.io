@@ -470,7 +470,7 @@ ipconfig /all
 
 ```mermaid
 graph LR
-    A[사용자<br/>"www.google.com"] -->|DNS 질의| B[DNS 서버]
+    A[사용자<br/>www.google.com] -->|DNS 질의| B[DNS 서버]
     B -->|IP 주소 응답<br/>172.217.175.46| A
     A -->|IP로 접속| C[웹 서버<br/>172.217.175.46]
 ```

