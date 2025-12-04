@@ -1,6 +1,6 @@
 ---
-title: "Rookies 1일차: 클라우드 컴퓨팅과 AWS 핵심 개념 (완전 정복)"
-excerpt: "클라우드의 정의부터 AWS 인프라, 네트워크(VPC), 보안(IAM)까지 핵심 원리를 시각 자료와 함께 쉽게 정리한다."
+title: "Rookies 6주차: 클라우드 컴퓨팅과 AWS 핵심 개념 "
+excerpt: "클라우드의 정의부터 AWS 인프라, 네트워크(VPC), 보안(IAM)까지 핵심 원리 학습"
 categories: cloud
 tags: [python, security, sk, aws, cloud]
 typora-root-url: ../../
@@ -31,7 +31,7 @@ graph LR
     B --> C[3. 보안 및 권한 Identity]
     C --> D[4. 가상 네트워크 VPC]
     D --> E[5. 컴퓨팅 및 스토리지]
-    E --> F[6. 운영 및 비용 최적화]
+    E --> F[6. 실습 가이드]
     
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style F fill:#bbf,stroke:#333,stroke-width:2px
