@@ -8,7 +8,7 @@
   display_name: "Hack The Box"
   url: "/categories/hackthebox"
 - name: penetration
-  display_name: "모의해킹"
+  display_name: "Pentesting"
   url: "/categories/penetration"
 - name: knight
   display_name: "기사"
@@ -63,3 +63,15 @@
 - name: web
   display_name: "Web"
   url: "/categories/web"
+
+- name: database
+  display_name: "Database"
+  url: "/categories/database"
+
+- name: docker
+  display_name: "Docker"
+  url: "/categories/docker"
+
+- name: script
+  display_name: "Script"
+  url: "/categories/script"

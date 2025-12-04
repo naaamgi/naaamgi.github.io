@@ -11,13 +11,24 @@
       </a>
     </li>
 
-    <!-- 보안 개념 공부 -->
+    <!-- 개념 -->
     <li>
-      <span class="nav__sub-title">보안 개념 공부</span>
+      <span class="nav__sub-title">개념</span>
       <ul>
-        {% comment %} penetration 카테고리 {% endcomment %}
+        {% comment %} Database 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
-          {% if category.name == "penetration" %}
+          {% if category.name == "database" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} Docker 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "docker" %}
             <li>
               <a href="{{ category.url }}">
                 {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
@@ -29,6 +40,17 @@
         {% comment %} pnt 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
           {% if category.name == "pnt" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} Script 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "script" %}
             <li>
               <a href="{{ category.url }}">
                 {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
@@ -50,10 +72,21 @@
       </ul>
     </li>
 
-    <!-- 보안 실습 공부 -->
+    <!-- 실습 -->
     <li>
-      <span class="nav__sub-title">보안 실습 공부</span>
+      <span class="nav__sub-title">실습</span>
       <ul>
+        {% comment %} Pentesting 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "penetration" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
         {% comment %} project 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
           {% if category.name == "project" %}
