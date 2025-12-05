@@ -1,5 +1,5 @@
 ---
-title: "Rookies 6주차: 클라우드 컴퓨팅과 AWS 핵심 개념 "
+title: "클라우드 컴퓨팅과 AWS 핵심 개념"
 excerpt: "클라우드의 정의부터 AWS 인프라, 네트워크(VPC), 보안(IAM)까지 핵심 원리 학습"
 categories: cloud
 tags: [python, security, sk, aws, cloud]
