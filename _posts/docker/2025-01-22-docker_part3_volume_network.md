@@ -680,10 +680,10 @@ docker network inspect mybr1
 
 ```bash
 # Subnet 정보 확인
-docker network inspect --format '{{.IPAM.Config}}' mybr1
+{% raw %}docker network inspect --format '{{.IPAM.Config}}' mybr1{% endraw %}
 
 # 연결된 컨테이너 확인
-docker network inspect --format '{{.Containers}}' mybr1
+{% raw %}docker network inspect --format '{{.Containers}}' mybr1{% endraw %}
 ```
 
 ### 6-3. 컨테이너에 네트워크 연결
@@ -1021,7 +1021,7 @@ docker container logs --tail 10 web1
 **로그 파일 경로 확인:**
 
 ```bash
-docker container inspect --format '{{.LogPath}}' web1
+{% raw %}docker container inspect --format '{{.LogPath}}' web1{% endraw %}
 ```
 
 **예상 출력:**

@@ -410,7 +410,7 @@ docker system info | grep "Docker Root Dir"
 또는
 
 ```bash
-docker info --format '{{.DockerRootDir}}'
+{% raw %}docker info --format '{{.DockerRootDir}}'{% endraw %}
 ```
 
 ### 4-3. Docker 디렉토리 구조 확인

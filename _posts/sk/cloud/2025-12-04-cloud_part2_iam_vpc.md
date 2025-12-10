@@ -197,15 +197,18 @@ Access Key ID: AKIAIOSFODNN7EXAMPLE          (20자)
 Secret Access Key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY  (40자)
 ```
 
+
 **액세스 키 관리 규칙:**
 
-1. **최대 개수 제한**
+1\. **최대 개수 제한**
 ```bash
 # 한 IAM 사용자당 최대 2개의 액세스 키 보유 가능
 # 이유: 키 교체 시 무중단 전환을 위함
 ```
 
-2. **키 교체 절차 (무중단 방식)**
+
+2\. **키 교체 절차 (무중단 방식)**
+
 ```bash
 # 1단계: 새 키 생성 (key2)
 aws iam create-access-key --user-name myuser
@@ -221,7 +224,9 @@ aws iam update-access-key --user-name myuser --access-key-id <key1_id> --status 
 aws iam delete-access-key --user-name myuser --access-key-id <key1_id>
 ```
 
-3. **노출 시 즉시 조치**
+
+3\. **노출 시 즉시 조치**
+
 ```bash
 # 액세스 키가 GitHub 등에 노출된 경우
 # 1) 즉시 비활성화

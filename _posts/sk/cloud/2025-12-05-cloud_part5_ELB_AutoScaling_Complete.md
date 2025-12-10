@@ -1,6 +1,6 @@
 ---
 title: "AWS ELB와 Auto Scaling: 고가용성 웹 서비스 구축 실습"
-excerpt: "Application Load Balancer를 활용한 트래픽 분산과 Auto Scaling을 통한 자동 확장 구성을 학습하고, 멀티 AZ 웹 서비스를 콘솔에서 직접 구축합니다."
+excerpt: "Application Load Balancer를 활용한 트래픽 분산, Auto Scaling, 멀티 AZ 웹 서비스"
 
 categories: ['cloud']
 tags: [AWS, ELB, ALB, NLB, Auto-Scaling, 고가용성, 웹서버, Target-Group, Health-Check]
