@@ -120,9 +120,9 @@
           {% endif %}
         {% endfor %}
 
-        {% comment %} pg_work 카테고리 {% endcomment %}
+        {% comment %} Webgoat 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
-          {% if category.name == "pg_work" %}
+          {% if category.name == "webgoat" %}
             <li>
               <a href="{{ category.url }}">
                 {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
@@ -173,6 +173,17 @@
         {% comment %} Cloud 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
           {% if category.name == "cloud" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} Web Secure 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "websecure" %}
             <li>
               <a href="{{ category.url }}">
                 {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})

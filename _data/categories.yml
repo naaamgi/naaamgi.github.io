@@ -18,9 +18,9 @@
   display_name: "Proving Grounds - Practice"
   url: "/categories/pg_practice"
 
-- name: pg_work
-  display_name: "Proving Grounds - Work"
-  url: "/categories/pg_work"
+- name: webgoat
+  display_name: "Webgoat"
+  url: "/categories/webgoat"
 
 - name: tools
   display_name: "Tools"
@@ -51,6 +51,10 @@
 - name: cloud
   display_name: "Cloud"
   url: "/categories/cloud"
+
+- name: websecure
+  display_name: "Web Secure"
+  url: "/categories/websecure"
 
 - name: normal
   display_name: "잡담"
