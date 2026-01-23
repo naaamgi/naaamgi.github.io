@@ -1,7 +1,7 @@
 ---
 title: " WebGoat - SQL Injection(intro) 문제풀이"
-excerpt: ".."
-categories: ['webgoat']
+excerpt: "String, Numeric, 기밀성, 무결성, 가용성 침해 SQL Injection에 대해 배워보자."
+categories: ['webgoat','websecure']
 typora-root-url: ../../
 published: true
 date: 2025-12-22
@@ -33,6 +33,12 @@ SQL Injection(SQLi)은 애플리케이션이 사용자 입력을 적절히 검�
 
 - 대상 레슨: WebGoat — "SQL Injection (intro)" (WebGoat 기본 제공 실습)
 - 요구 사항: WebGoat(로컬 또는 도커로 실행), 브라우저
+- 도커 실행 명령어:
+
+```
+docker run -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webgoat/webgoat
+```
+
 - WebGoat 접속 예시: http://localhost:8080/WebGoat
 - 스크린샷: 
   - 예: 메인화면![WebGoat 메인 화면](/images/2025-12-22-sql_injection/image-20251222112103919.png)
@@ -178,7 +184,7 @@ SQL Injection(SQLi)은 애플리케이션이 사용자 입력을 적절히 검�
 
 
 
-### Step 12: Compromising Integrity with Query chaining
+### Step 12: 무결성 침해 - Compromising Integrity with Query chaining
 
 쿼리 체이닝으로 무결성 침해, 이번 단계는 데이터의 **무결성(Integrity)**을 침해하는 연습입니다. 단순히 정보를 훔쳐보는 것에서 나아가, 데이터베이스의 내용을 공격자가 원하는 대로 **수정**하는 방법 실습합니다.
 
@@ -213,7 +219,7 @@ SELECT * FROM employees WHERE last_name = 'Smith'; UPDATE employees SET salary =
 
 
 
-### Step 13: Compromising Availability
+### Step 13: 가용성 침해 - Compromising Availability
 
 이 단계는 보안의 3대 요소(CIA) 중 마지막인 **가용성(Availability)**을 침해하는 연습입니다. 가용성이란 "필요할 때 데이터에 접근할 수 있는 상태"를 말하며, 이를 침해한다는 것은 데이터를 삭제하거나 시스템을 마비시켜 사용하지 못하게 만드는 것을 의미합니다.
 

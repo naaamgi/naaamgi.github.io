@@ -36,6 +36,10 @@
   display_name: "SK Shielders Rookies"
   url: "/categories/sk"
 
+- name: security
+  display_name: "Security Monitoring"
+  url: "/categories/security"
+
 - name: linux
   display_name: "Linux"
   url: "/categories/linux"

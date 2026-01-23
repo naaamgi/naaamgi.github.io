@@ -55,9 +55,8 @@ $handwritten: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursi
 /* Defaults used in Minimal mistakes */
 
 
-// Inter와 Spoqa Han Sans Neo를 가장 앞에 배치
-//$default-sans-serif: -apple-system, BlinkMacSystemFont, "Nanum Gothic", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-$default-sans-serif: "Inter", "Inter Fallback", system-ui, arial;
+// 웹폰트 Inter + Noto Sans KR 사용 (모든 OS에서 동일한 가독성)
+$default-sans-serif: "Inter", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
 $default-serif: Georgia, Times, serif;
 // 변경 전: $default-monospace: Monaco, Consolas, "Lucida Console", monospace;
 // 변경 후:
