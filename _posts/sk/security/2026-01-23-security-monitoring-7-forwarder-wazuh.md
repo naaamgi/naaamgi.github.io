@@ -538,3 +538,5 @@ sudo bash wazuh-install.sh -a
 7. **Netplan**: YAML 들여쓰기 2칸 정확히!
 
 ---
+
+**다음 편**: [보안 모니터링 8편: Wazuh 설치 및 Agent 연동](/categories/security/security-monitoring-8-wazuh-setup/)
