@@ -202,6 +202,17 @@
             </li>
           {% endif %}
         {% endfor %}
+
+        {% comment %} 모의해킹 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "sk_rookies" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
       </ul>
     </li>
 
