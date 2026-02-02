@@ -205,7 +205,7 @@
 
         {% comment %} 모의해킹 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
-          {% if category.name == "sk_rookies" %}
+          {% if category.name == "sk_pentesting" %}
             <li>
               <a href="{{ category.url }}">
                 {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})

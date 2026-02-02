@@ -2,7 +2,7 @@
 title: "SQL Injection 심화 & Python 자동화 스크립트"
 excerpt: "SQL Injection 공격 자동화와 이진 탐색 알고리즘을 활용한 효율적인 Blind SQLi 구현 방법"
 
-categories: ['sk']
+categories: ['sk_pentesting']
 typora-root-url: ../../
 
 date: 2026-01-30

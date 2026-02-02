@@ -32,9 +32,9 @@
   display_name: "CVE"
   url: "/categories/cve"
 
-- name: sk
-  display_name: "SK Shielders Rookies"
-  url: "/categories/sk"
+- name: sk_pentesting
+  display_name: "모의해킹"
+  url: "/categories/sk_pentesting"
 
 - name: security
   display_name: "Security Monitoring"

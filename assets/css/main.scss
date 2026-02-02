@@ -92,7 +92,7 @@ body {
           pointer-events: none;
           cursor: not-allowed;
         }
-        
+
         // current 클래스 스타일 (현재 페이지)
         &.current {
           font-weight: bold;
@@ -101,5 +101,13 @@ body {
         }
       }
     }
+  }
+}
+
+// 사이드바와 메인 컨텐츠 사이 구분선 스타일
+.sidebar {
+  @include breakpoint($large) {
+    border-right: 1px solid rgba(255, 255, 255, 0.1); // 어두운 테마에 맞는 은은한 구분선
+    padding-right: 1em;
   }
 }

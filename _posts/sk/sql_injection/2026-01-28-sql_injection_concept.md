@@ -2,7 +2,7 @@
 title: "SQL Injection 개념 및 원리"
 excerpt: "SQL Injection의 핵심 원리와 논리적 접근 방법을 정리한 학습자료"
 
-categories: ['sk']
+categories: ['sk_pentesting']
 typora-root-url: ../../
 
 date: 2026-01-28

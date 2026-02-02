@@ -2,7 +2,7 @@
 title: "SQL Injection - Error-based & Blind 공격 정리"
 excerpt: "Error-based와 Blind SQL Injection의 원리와 공격 기법 정리"
 
-categories: ['sk']
+categories: ['sk_pentesting']
 typora-root-url: ../../
 
 date: 2026-01-29
