@@ -40,10 +40,6 @@
   display_name: "Security Monitoring"
   url: "/categories/security"
 
-- name: sk_rookies
-  display_name: "모의해킹"
-  url: "/categories/sk_rookies"
-
 - name: linux
   display_name: "Linux"
   url: "/categories/linux"
