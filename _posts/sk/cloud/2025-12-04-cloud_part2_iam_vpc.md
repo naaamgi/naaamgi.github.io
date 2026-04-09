@@ -808,7 +808,7 @@ sequenceDiagram
 
 #### AssumeRole 명령어 상세 분석
 
-##### 📟 `aws sts assume-role` 명령어
+##### `aws sts assume-role` 명령어
 
 **목적:** 지정한 역할을 임시로 수임하여 해당 역할의 권한으로 작업할 수 있는 임시 보안 자격증명을 발급받습니다.
 
@@ -1365,7 +1365,7 @@ Subnet-B → us-west-2c (고정)
 ```
 
 3. **서브넷 간 CIDR 중복 불가**
-```
+```text
 ❌ 불가능:
 Subnet-A: 10.0.1.0/24
 Subnet-B: 10.0.1.0/24  (같은 범위)
