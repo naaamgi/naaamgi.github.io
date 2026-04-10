@@ -1,5 +1,5 @@
 ---
-title: "Rookies 미니 프로젝트 2: 웹 애플리케이션 보안 진단"
+title: "[미니 프로젝트 2] 웹 애플리케이션 구축 및 보안 진단"
 excerpt: "취약 웹 애플리케이션 구축 및 KISA 가이드 기반 자동/수동 보안 진단"
 
 categories: project
