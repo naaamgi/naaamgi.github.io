@@ -1,5 +1,5 @@
 ---
-title: "[미니 프로젝트 1차] AI 활용 및 데이터 분석"
+title: "[미니 프로젝트 1] AI 활용 및 데이터 분석 프로젝트"
 excerpt: "예술의전당 데이터 분석 프로젝트: RAG 기반 의사결정 지원 시스템"
 
 categories: [sk, project]
