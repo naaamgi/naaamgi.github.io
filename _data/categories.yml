@@ -83,3 +83,7 @@
 - name: script
   display_name: "Script"
   url: "/categories/script"
+
+- name: burpsuite
+  display_name: "Burp Suite"
+  url: "/categories/burpsuite"

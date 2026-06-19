@@ -11,9 +11,48 @@
       </a>
     </li>
 
-    <!-- 개념 -->
+    <!-- Web -->
     <li>
-      <span class="nav__sub-title">개념</span>
+      <span class="nav__sub-title">Web</span>
+      <ul>
+        {% comment %} web 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "web" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} webgoat 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "webgoat" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} burpsuite 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "burpsuite" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
+    <!-- DB -->
+    <li>
+      <span class="nav__sub-title">DB</span>
       <ul>
         {% comment %} Database 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
@@ -25,7 +64,13 @@
             </li>
           {% endif %}
         {% endfor %}
+      </ul>
+    </li>
 
+    <!-- Infra -->
+    <li>
+      <span class="nav__sub-title">Infra</span>
+      <ul>
         {% comment %} Docker 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
           {% if category.name == "docker" %}
@@ -58,35 +103,20 @@
             </li>
           {% endif %}
         {% endfor %}
-
-        {% comment %} web 카테고리 {% endcomment %}
-        {% for category in site.data.categories %}
-          {% if category.name == "web" %}
-            <li>
-              <a href="{{ category.url }}">
-                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
       </ul>
     </li>
 
-    <!-- 실습 -->
+    <!-- Cloud -->
     <li>
-      <span class="nav__sub-title">실습</span>
+      <span class="nav__sub-title">Cloud</span>
       <ul>
-        {% comment %} Pentesting 카테고리 {% endcomment %}
-        {% for category in site.data.categories %}
-          {% if category.name == "penetration" %}
-            <li>
-              <a href="{{ category.url }}">
-                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
+      </ul>
+    </li>
 
+    <!-- CTF -->
+    <li>
+      <span class="nav__sub-title">CTF</span>
+      <ul>
         {% comment %} oscp 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
           {% if category.name == "oscp" %}
@@ -101,17 +131,6 @@
         {% comment %} pg_practice 카테고리 {% endcomment %}
         {% for category in site.data.categories %}
           {% if category.name == "pg_practice" %}
-            <li>
-              <a href="{{ category.url }}">
-                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
-
-        {% comment %} Webgoat 카테고리 {% endcomment %}
-        {% for category in site.data.categories %}
-          {% if category.name == "webgoat" %}
             <li>
               <a href="{{ category.url }}">
                 {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})

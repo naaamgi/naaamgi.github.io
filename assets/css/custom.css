@@ -25,3 +25,9 @@
     max-width: 100%;
     height: auto;
 }
+
+/* 블로그 포스팅 내 모든 이미지 자동 가운데 정렬 */
+.page__content img {
+    display: block;
+    margin: 0 auto;
+}
