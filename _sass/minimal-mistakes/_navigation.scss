@@ -438,7 +438,17 @@
 
 .nav__list .nav__items {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+
+  > li {
+    border-bottom: 1px solid mix(#000, $background-color, 5%);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.25rem;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 
   a {
     color: inherit;
@@ -488,13 +498,13 @@
 
 .nav__sub-title {
   display: block;
-  margin: 0.5rem 0;
-  padding: 0.25rem 0;
+  margin: 0.3rem 0;
+  padding: 0.1rem 0;
   font-family: $sans-serif-narrow;
   font-size: $type-size-6;
   font-weight: bold;
   text-transform: uppercase;
-  border-bottom: 1px solid $border-color;
+  border-bottom: none;
 }
 
 /*
@@ -511,9 +521,10 @@
   box-shadow: $box-shadow;
 
   .nav__title {
-    color: #fff;
+    color: $text-color;
     font-size: $type-size-6;
-    background: $primary-color;
+    background: transparent;
+    border-bottom: 1px solid $border-color;
     border-start-start-radius: $border-radius;
     border-start-end-radius: $border-radius;
   }
@@ -539,7 +550,7 @@
     display: block;
     padding: 0.25rem 0.75rem;
     color: $muted-text-color;
-    font-weight: bold;
+    font-weight: normal;
     line-height: 1.5;
     border-bottom: 1px solid $border-color;
 

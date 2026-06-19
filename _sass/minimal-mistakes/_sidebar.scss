@@ -28,11 +28,22 @@
     }
 
     &.sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 2em;
       overflow-y: auto;
       /* calculate height of nav list
          viewport height - nav height - masthead x-padding
       */
       max-height: calc(100vh - #{$nav-height} - 2em);
+
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   }
 
@@ -80,7 +91,7 @@
     inset-inline-end: 0;
     width: $right-sidebar-width-narrow;
     margin-inline-end: -1 * $right-sidebar-width-narrow;
-    padding-inline-start: 1em;
+    padding-inline-start: 3.5em; /* Increased from 1em to separate from main text */
     z-index: 10;
 
     &.sticky {
