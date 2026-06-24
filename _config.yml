@@ -216,6 +216,7 @@ sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
   quiet_deps: true # Sass deprecation 경고 숨기기
+  silence_deprecations: ['import']
 
 
 # Outputting

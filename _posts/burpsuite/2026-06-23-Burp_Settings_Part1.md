@@ -2,7 +2,7 @@
 title: "Burp Suite 기본 완벽 가이드: 설정창(Settings) 해부하기 - 1편"
 excerpt: "User vs Project 설정의 차이점과 모의해킹 필수 세팅인 Proxy 설정(Listeners, Interception Rules) 파헤치기"
 categories: ['burpsuite']
-published: true
+published: false
 date: 2026-06-23
 tags: [burpsuite, settings, proxy, 모의해킹, 웹해킹, 기본기]
 ---
