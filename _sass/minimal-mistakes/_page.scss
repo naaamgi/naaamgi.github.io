@@ -188,6 +188,12 @@ body {
     margin-top: -1.5em;
     padding-inline-start: 1.25rem;
   }
+
+  /* vertical alignment for first content */
+  :first-child, 
+  aside + :nth-child(2) {
+    margin-top: 0em;
+  }
 }
 
 /* 목차(TOC)만 원래 사이즈로 덮어쓰기 */
