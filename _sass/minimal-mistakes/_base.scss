@@ -165,6 +165,19 @@ pre {
   font-family: $monospace;
 }
 
+/* inline code styling (e.g. `word`) */
+p > code,
+a > code,
+li > code,
+figcaption > code,
+td > code {
+  color: #d20f39; /* Catppuccin Red for visibility */
+  background-color: #e6e9ef; /* Catppuccin Mantle for slight contrast */
+  padding: 0.15em 0.3em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
 pre {
   overflow-x: auto; /* add scrollbars to wide code blocks*/
 }

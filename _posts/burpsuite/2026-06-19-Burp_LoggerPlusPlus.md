@@ -1,5 +1,5 @@
 ---
-title: "Burp Suite 실무 활용: Logger++"
+title: "Burp Suite 실무 활용: Logger++ 플러그인"
 excerpt: "수만 개의 트래픽 중 내가 원하는 정보만 쏙쏙 뽑아내는 Logger++의 정규표현식 필터링"
 categories: ['burpsuite']
 published: true
