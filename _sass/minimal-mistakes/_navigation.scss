@@ -550,7 +550,7 @@
     display: block;
     padding: 0.25rem 0.75rem;
     color: $muted-text-color;
-    font-weight: normal;
+    font-weight: bold; /* 상위 목차(H2)는 굵게 표시하여 하위 목차와 구분 */
     line-height: 1.5;
     border-bottom: 1px solid $border-color;
 

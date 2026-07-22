@@ -1,5 +1,5 @@
 ---
-title: "Burp Suite 실무 활용: Param Miner"
+title: "Burp Suite: Param Miner"
 excerpt: "숨겨진 파라미터와 헤더를 자동으로 찾아주는 Param Miner를 활용한 백도어 탐지 및 웹 캐시 포이즈닝"
 categories: ['burpsuite']
 published: false

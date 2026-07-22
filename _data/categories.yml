@@ -87,3 +87,7 @@
 - name: burpsuite
   display_name: "Burp Suite"
   url: "/categories/burpsuite"
+
+- name: mobile
+  display_name: "Mobile"
+  url: "/categories/mobile"

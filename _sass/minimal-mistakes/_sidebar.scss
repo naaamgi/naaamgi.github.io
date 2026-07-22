@@ -91,7 +91,7 @@
     inset-inline-end: 0;
     width: $right-sidebar-width-narrow;
     margin-inline-end: -1 * $right-sidebar-width-narrow;
-    padding-inline-start: 3.5em; /* Increased from 1em to separate from main text */
+    padding-inline-start: 5.5em; /* 목차 텍스트를 오른쪽으로 더 밀어서 본문과의 간격 확보 */
     z-index: 10;
 
     &.sticky {
@@ -101,10 +101,18 @@
       top: 2em;
       float: inline-end;
 
+      font-size: 0.95em; /* 전체 크기를 95% 수준으로 축소 */
+
       .toc {
         .toc__menu {
           overflow-y: auto;
           max-height: calc(100vh - 7em);
+          
+          a {
+            padding-top: 0.2em;
+            padding-bottom: 0.2em;
+            /* 좌우 여백(들여쓰기)은 기존 계층 구조 유지를 위해 건드리지 않음 */
+          }
         }
       }
     }

@@ -1,5 +1,5 @@
 ---
-title: "Burp Suite 실무 활용: JSON Web Tokens 플러그인"
+title: "Burp Suite: JSON Web Tokens 플러그인"
 excerpt: "JWT 디코딩과 서명 조작, None 알고리즘 우회 활용 플러그인 학습"
 categories: ['burpsuite']
 published: true

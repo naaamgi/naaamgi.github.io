@@ -1,5 +1,5 @@
 ---
-title: "Burp Suite 실무 활용: Autorize 플러그인"
+title: "Burp Suite: Autorize 플러그인"
 excerpt: "Autorize 플러그인을 활용한 접근 제어 결함(IDOR) 자동화 탐지 및 설정법 학습"
 categories: ['burpsuite']
 typora-root-url: ../../

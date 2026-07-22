@@ -50,6 +50,23 @@
       </ul>
     </li>
 
+    <!-- Mobile -->
+    <li>
+      <span class="nav__sub-title">Mobile</span>
+      <ul>
+        {% comment %} mobile 카테고리 {% endcomment %}
+        {% for category in site.data.categories %}
+          {% if category.name == "mobile" %}
+            <li>
+              <a href="{{ category.url }}">
+                {{ category.display_name }} ({{ site.categories[category.name] | size | default: 0 }})
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+
     <!-- DB -->
     <li>
       <span class="nav__sub-title">DB</span>

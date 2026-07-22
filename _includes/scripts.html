@@ -33,3 +33,31 @@
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
 {% endif %}
+
+<!-- Magnific Popup Lightbox Wrapper -->
+<script>
+  $(document).ready(function() {
+    // 본문 안의 모든 이미지 중에서 링크가 안 걸린 이미지만 선택
+    $('.page__content img').not('a > img').each(function() {
+      var $img = $(this);
+      var imgUrl = $img.attr('src');
+      var imgTitle = $img.attr('alt') || 'Image';
+      
+      // 이미지를 a 태그로 감싸서 클릭 가능한 팝업 링크로 만들기
+      $img.wrap('<a href="' + imgUrl + '" class="image-popup" title="' + imgTitle + '"></a>');
+    });
+
+    // 생성된 링크들에 대해 팝업 플러그인(Magnific Popup) 실행
+    $('.page__content').magnificPopup({
+      delegate: 'a.image-popup',
+      type: 'image',
+      tLoading: 'Loading image...',
+      closeOnContentClick: true, // 이미지를 한 번 더 클릭하면 닫히도록 설정
+      image: {
+        tError: '<a href="%url%">Image</a> could not be loaded.',
+      },
+      removalDelay: 300,
+      mainClass: 'mfp-zoom-in'
+    });
+  });
+</script>
