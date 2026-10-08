@@ -16,5 +16,25 @@ AI 기반 보안 자동화 도구의 실증 테스트 결과도 함께 기록합
 2. 카테고리 또는 태그로 원하는 보안 주제 탐색
 3. 포스트 내 코드·다이어그램·실습 가이드 참고
 
+## 로컬 미리보기
+
+Ruby와 Bundler가 설치된 환경에서 저장소 루트를 기준으로 실행합니다.
+
+```powershell
+bundle config set --local path vendor/bundle
+bundle install
+bundle exec jekyll serve --host 127.0.0.1 --port 4000 --unpublished --disable-disk-cache
+```
+
+[로컬 블로그](http://127.0.0.1:4000/)에서 확인합니다. `--unpublished`는 `published: false`인 포스트도 로컬에 표시합니다. Markdown 파일을 저장하면 자동으로 다시 생성되며, 브라우저를 새로고침하면 변경을 볼 수 있습니다. 서버 종료는 실행한 터미널에서 `Ctrl+C`를 누릅니다.
+
+Neo-reGeorg 초안: [로컬 글 보기](http://127.0.0.1:4000/pnt/neo-regeorg-concepts/)
+
+전체 빌드만 확인하려면 다음을 실행합니다.
+
+```powershell
+bundle exec jekyll build --unpublished --disable-disk-cache
+```
+
 ## 라이선스
 MIT License
